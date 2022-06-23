@@ -1,0 +1,99 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<html>
+<body>
+  
+  <h2 style="text-align: center;">Ordinary Differential Equations: MATH 2280</h2>
+  
+  <div style="padding-right: 50px; padding-left: 50px;">
+  	<p>A differential equation is an equation involving some unknown function and it's derivatives.</p>
+  	<p style="text-align: center;">$u(x) = \frac{du}{dx}$</p>
+  	<p><b>Independent and Dependent Variables</b></p>
+  	<p>Observe the following two equations:</p>
+  	<p style="text-align: center;">$\frac{dy}{dx} - 4x^2 = 0$ and $y''' - 3y' = t$</p>
+  	<p>For the first equation, $x$ is the independent variable and $y$ is the dependent variable. For the second equation, $t$ is the independent variable and $y$ is a dependent variable. We say they are "dependent" if they "depend" on something. For example, the change of $y$ depends on the change in $x$. $x$ is what's controlling the equation and the outcome, where the outcome, $y$, depends on what the independent variable $x$ is.</p>
+  	<p>Try spotting the independent and dependent variables in the following equations:</p>
+  	<p style="text-align: center;">$\frac{dp}{dt} = -10p$&emsp;&emsp;$\frac{dp}{dt} = 0.3tp - 0.006p^3$&emsp;&emsp;$\frac{\partial u}{\partial t} - 6\frac{\partial u}{\partial x} = 0$</p>
+  	<p><b>ODE's and PDE's</b></p>
+  	<p>A differential equation involving ordinary derivatives is called an ordinary differential equation or (ODE) and a differential equation that involves partial derivatives is called a partial differential equation or (PDE). </p>
+  	<p>ODE: $x^2y'' - 6xy' + 4y = x$, where $y'' = \frac{d^2y}{dx^2}$ and $y' = \frac{dy}{dx}$</p>
+  	<p>PDE: $\frac{\partial' u}{\partial t^2} - \frac{\partial' u}{\partial x^2} = \sin(x*y)$</p>
+  	<p><b>Order of Equations</b></p>
+  	<p>The order of any differential equation is given by the largest order derivative:</p>
+  	<p>2nd Order PDE: $\frac{\partial' u}{\partial t^2} - \frac{\partial' u}{\partial x^2} = \sin(x*y)$</p>
+  	<p>2nd Order ODE: $x^2y'' - 6xy' + 4y = x$</p>
+  	<p>1st Order ODE: $\frac{dp}{dt} = 3p - 0.01p^2$</p>
+	<p><b>Linear and Non-linear</b></p>
+  	<p>An equation that involves non-linear terms in the dependent variable is called a non-linear differential equation. Otherwise the equation is linear:</p>
+  	<p>Linear, 1st Order ODE: &emsp;&emsp;$\frac{dp}{dt} = -4p$</p>
+  	<p>Non-linear, 1st Order ODE: $\frac{dp}{dt} = -4p -6p^2$</p>
+  	<p>Non-linear, 1st Order PDE: $u\frac{\partial u}{\partial x} - \frac{\partial u}{\partial t^2} = 0$</p>
+  	<div style="border: solid 2px; padding: 10px;">
+	  	<p><b>Example:</b> Finding the general solution to a differential equation:</p>
+	  	<div style="padding-left: 50px; padding-right: 50px;">
+			<p>$\frac{d^2y}{dx^2} - 4x^2 = 0$</p>
+			<p>This is a second order linear differential equation. The first step is to solve for $y$.</p>
+			<p>$\frac{d^2y}{dx^2} - 4x^2 = 0 \implies \frac{d^2y}{dx^2} = 4x^2$</p>
+			<p>Now integrate both sides with respect to x:</p>
+			<p>$\int{\frac{d^2y}{dx^2}}dx = \int{4x^2}dx \implies \frac{dy}{dx} + C_1 = \frac{4}{3}x^3 + C_2 \implies \frac{dy}{dx} = \frac{4}{3}x^3 + C_2 - C_1$</p>
+			<p>$C_1$ and $C_2$ are just unkown constants. When they are added together, we just get another constant, let's call it $C_3$. Now we have the following: </p>
+			<p>$\frac{dy}{dx} = \frac{4}{3}x^3 + C_3$ and integrate again:</p>
+			<p>$\int{\frac{dy}{dx}}dx = \int{\frac{4}{3}x^3 + C_3}dx \implies y + C_4 = \frac{1}{3}x^4 + C_3x + C_5 \implies y = \frac{1}{3}x^4 + C_3x + C_5 + C_4$</p>
+			<p>Combine constants $C_4$ and $C_5$ to get $C_6$, and our final answer is:</p>
+			<p><b>Solution:</b>$y = \frac{1}{3}x^4 + C_3x + C_6$</p>
+			<p><b>Recap:</b> We solved the differential equation $\frac{d^2y}{dx^2} - 4x^2 = 0$ for $y$ and ended up getting $y = \frac{1}{3}x^4 + C_3x + C_6$ as a general solution. Thus, we can pick any combination of values of $C_3$ and $C_6$ to get an exact (or unique) solution. Possible unique solutions could be $y = \frac{1}{3}x^4 + 5x + 63$ or $y = \frac{1}{3}x^4 + 2x + 0.001$. In general, to find unique solutions, you must be given intial conditions.
+	  	</div>
+  	</div><br>
+  	<div style="border: solid 2px; padding: 10px;">
+	  	<p><b>Example:</b> Finding the solution to a differential equation with initial conditions:</p>
+	  	<div style="padding-left: 50px; padding-right: 50px;">
+			<p>$\frac{dy}{dx} = \sin(x)$, with $y(\pi) = 3$</p>
+			<p>This is a first order linear differential equation. Let's start by integrating both sides with respect to $x$</p>
+			<p>$\int{\frac{dy}{dx}}dx = \int{\sin(x)}dx \implies y + C_1 = -\cos(x) + C_2 \implies y = -\cos(x) + C_2 - C_1$</p>
+			<p>Let's combine constants $C_1$ and $C_2$ and define it as $C_3$, then our general soltuion is the following:</p>
+			<p>$y = -\cos(x) + C_3$</p>
+			<p>This is the general solution to the intial problem, but we were given intial conditions this time, so let's use them and find the exact solution.</p>
+			<p>If $y(\pi) = 3$ and $y(\pi) = -\cos(\pi) + C_3$, then $3 = -\cos(\pi) + C_3 \implies C_3 = 3 + \cos(\pi) \implies C_3 = 3 - 1 = 2$</p>
+			<p>We just solved for $C_3$, so now let's rewrite our final, unqiue solution as:</p>
+			<p><b>Solution:</b> $y = -\cos(x) + 2$</p>
+			<p><b>Recap:</b> We solved for the general solution of $\frac{dy}{dx} = \sin(x)$ and found it to be $y = -\cos(x) + C_3$. After using intial condition, $y(\pi) = 3$,we found the exact (or unique) solution to be $y = -\cos(x) + 2$.</p>
+	  	</div>
+  	</div>
+  	<p>We can specify conditions on $y$ and it's derivatives to fix the constants of integration. If we specify the conditions at the same point, they're called initial conditions, (or initial values). We just did this in the last example.</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Finding the solution to a differential equation with initial conditions:</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>$\frac{d^2y}{dx^2} = t - e^{-t}$ with $y(1) = -1$, $y'(1) = 1$</p>
+      <p>This is a second order linear differential equation. Start solving by integration:</p>
+      <p>$\int{\frac{d^2y}{dt^2}}dt = \int{t - e^{-t}}dt \implies \frac{dy}{dt} = \frac{1}{2}t^2 + e^{-t} + C_1$</p>
+      <p>For the above, I just cut to the chase and combined the constants into one and called it $C_1$. Now let's integrate again:</p>
+      <p>$\int{\frac{dy}{dt}}dt = \int{\frac{1}{2}t^2 + e^{-t} + C_1}dt \implies y = \frac{1}{6}t^3 - e^{-t} + C_1t + C_2$</p>
+      <p>Again, I just cut to the chase and named the next combination of constants $C_2$. We have solved for the general solution. Now let's use the inital conditions and find the exact solution. The goal is to figure out what $C_1$ and $C_2$ are:</p>
+      <p>Recall the first derivative of our problem is $\frac{dy}{dt} = y'(t) = \frac{1}{2}t^2 + e^{-t} + C_1$. If $y'(1) = 1$, then...</p>
+      <p>$1 = \frac{1}{2}(1)^2 + e^{-(1)} + C_1 \implies C_1 = 1 - \frac{1}{2} - \frac{1}{e} \implies C_1 = \frac{1}{2} - \frac{1}{e}$</p>
+      <p>If $y(1) = -1$, then...</p> 
+      <p>$-1 = \frac{1}{6}(1)^3 - e^{-(1)} + C_1(1) + C_2 \implies C_2 = e^{-1} - C_1 - 1 - \frac{1}{6} \implies C_2 = \frac{1}{e} - C_1 - \frac{7}{6}$</p>
+      <p>We know what $C_1$ is, so let's plug is in to the above equation and solve for $C_2$:</p>
+      <p>$C_2 = \frac{1}{e} - (\frac{1}{2} - \frac{1}{e}) - \frac{7}{6} \implies C_2 = \frac{1}{e} - \frac{1}{2} + \frac{1}{e} - \frac{7}{6} \implies C_2 = \frac{2}{e} - \frac{5}{3}$</p>
+      <p>Now let's plug in $C_1$ and $C_2$ into our gernal solution:</p>
+      <p>$y = \frac{1}{6}t^3 - e^{-t} + (\frac{1}{2} - \frac{1}{e})t + (\frac{2}{e} - \frac{5}{3}) \implies y = \frac{1}{6}t^3 - e^{-t} + \frac{1}{2}t - \frac{1}{e}t + \frac{2}{e} - \frac{5}{3}$</p>
+      <p>With some simplification, the final solution is the following:</p>
+      <p><b>Solution:</b> $y = \frac{1}{6}t^3 - e^{-t} + \frac{e - 2}{2e}t + \frac{6 - 5e}{3e}$</p>
+      <p><b>Recap:</b> We solved for the general solution and found it to be $y = \frac{1}{6}t^3 - e^{-t} + C_1t + C_2$. After using intial conditions, we solved for $C_1$ and $C_2$, then plugged them back into our general solution to find an exact solution.</p>
+      </div>
+    </div><br>
+    <p><b>Directly Integrable ODE's</b></p>
+  	<p>So far we have been lucky enough to have examples that are directly integrable. A directly integrable differential equation is of the following form:</p>
+    <p style="text-align: center;">$\frac{dy}{dx} = F(x)$, where $F(x)$ is a function of x.</p>
+    <p>Here are some more examples of differential equations that are directly integrable:</p>
+    <p>1st Order: </p>
+
+  </div>
+  
+</body>
+</html>
+
+{% endblock %}

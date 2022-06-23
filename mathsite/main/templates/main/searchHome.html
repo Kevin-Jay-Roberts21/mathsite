@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<html>
+<body>
+  
+  <h2 style="text-align: center;">Pages Containing The Word You Searched</h2>
+  
+  <div style="padding-right: 50px; padding-left: 50px;">
+  	<p>Here are all of the pages that contain the word you searched for:</p>
+
+  	<table>
+  		{% for template in templates %}
+    		<tr><td><a href="{{template.0}}">{{template.1}}<a> Occurances of word in this page: {{template.2}}</td></tr>
+    	{% endfor %}
+  	</table>
+  	
+  	
+
+  </div>
+  
+</body>
+</html>
+
+{% endblock %}

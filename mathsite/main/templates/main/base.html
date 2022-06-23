@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<!-- Used for Latex code -->
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<!-- //
+// USED FOR INLINE USES OF MATHJAX LATEX CODE
+// -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<header>
+
+	<div class="header">
+	  <h1>Kevin's Math Notes and Research</h1>
+	</div>
+
+    <div class="topnav">
+	    <a href="/">Home</a>
+	    <a href="/algebraHome/">Algebra</a>
+	    <a href="/calculusHome/">Calculus</a>
+	    <a href="/linearAlgebraHome/">Linear Algebra</a>
+	    <a href="/myClassesHome/">My Classes</a>
+	    <a href="/researchHome/">Research</a>
+	    <a href="/examplesHome/">Examples</a>
+	</div>
+
+</header>
+
+<div class="search-container" style="padding-left: 10px; padding-top: 10px;">
+    <form action="{{home}}" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Search..." name="searchPages">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<div style="position: absolute; padding-left: 14px;">
+	<div class="popup" onclick="popupFunction()" style="font-size: 14px">How the search bar works?
+		<span class="popuptext" onclick="hidePopup()">Search for a word. If I have created a page that contains that word then the page will popup as an option.</span>
+	</div>
+</div>
+
+
+
+<br>
+
+
+<script>
+// Source: https://stackoverflow.com/questions/62820398/close-popup-by-clicking-outside-it-javascript
+// USED FOR THE POPUP IN THE TOP RIGHT CORNER
+const popups = [...document.getElementsByClassName('popup')];
+
+window.addEventListener('click', ({ target }) => {
+  const popup = target.closest('.popup');
+  const clickedOnClosedPopup = popup && !popup.classList.contains('show');
+  
+  popups.forEach(p => p.classList.remove('show'));
+  
+  if (clickedOnClosedPopup) popup.classList.add('show');  
+});
+</script>
+
+
+
+{% block content %}{% endblock %}
+
+
+<footer>
+  
+</footer>
+
+</html>
