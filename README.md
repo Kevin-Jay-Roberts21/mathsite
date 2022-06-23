@@ -5,3 +5,4 @@ This is a Math website that I've created to help myself as well as all others in
 Author: Kevin Roberts
 Utah State University. Departments of Computer Science, Physics and Applied Mathematics
 
+Folders bin and lib are not written by me. They are essentially necessary packages to make the website function. Most everything written by me, opposed to the django defaulted python files, is in the mathsite/mathsite/ folder.
