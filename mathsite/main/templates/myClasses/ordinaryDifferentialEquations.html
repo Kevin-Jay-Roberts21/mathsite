@@ -133,7 +133,7 @@
     <p>d) $Si(x) = \int_1^x\frac{\sin(s)}{s}ds$</p>
     <p></p>
     <div style="border: solid 2px; padding: 10px;">
-      <p><b>Example:</b> Find solution of differential equation using one of our definitions</p>
+      <p><b>Example:</b> Find solution of differential equation using one of our definitions from above</p>
       <div style="padding-left: 50px; padding-right: 50px;">
       <p>$\frac{dy}{dx} = e^{-x^2}$ with $y(0) = 0$</p>
       <p>First integrate: $\int_{s=x_o}^{s=x}\frac{dy}{ds}ds = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(s)|_{s=x_o}^{s=x} = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(x) - y(x_o) = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(x) = \int_{0}^{x}e^{-s^2}ds + 0$</p>
@@ -142,7 +142,94 @@
       <p><b>Solution:</b> $y(x) = \frac{\sqrt{\pi}}{2} * erf(x)$</p>
       </div>
     </div><br>
-    <p></p>
+    <p><b>Piecewise Defined Functions</b></p>
+    <p>A piecewise defined function, in simple words, is a function where in a certain region, the function is different than in another region. The following are examples of piecewise defined functions (let $\frac{dy}{dx} = f(x)$):</p>
+    <p>Example 1: \begin{equation}
+                  f(x) = \left\{
+                          \begin{array}{ll}
+                              x^2 & \quad x \lt 2 \\
+                              1 & \quad x \geq 2
+                          \end{array}
+                      \right.
+                  \end{equation}
+    </p>
+    <p>Example 2: \begin{equation}
+                  |x| = \left\{
+                          \begin{array}{ll}
+                              -x & \quad x \lt 0 \\
+                              x & \quad x \geq 0
+                          \end{array}
+                      \right.
+                  \end{equation}
+    </p>
+    <p><b>Special Piecewise Defined Functions</b></p>
+    <p>A few a these "special" piecewise defined functions are the step function and the ramp function:</p>
+    <p>Step Function: \begin{equation}
+                      f(x) = step(x) = \left\{
+                              \begin{array}{ll}
+                                  0 & \quad x \lt 0 \\
+                                  1 & \quad x \gt 0
+                              \end{array}
+                          \right.
+                      \end{equation}
+    </p>
+    <p>Ramp Function: \begin{equation}
+                      f(x) = ramp(x) = \left\{
+                              \begin{array}{ll}
+                                  0 & \quad x \lt 0 \\
+                                  x & \quad x \gt 0
+                              \end{array}
+                          \right.
+                      \end{equation}
+    </p>
+    <p>Let's now delve into solving Example 1, the Piecewise Defined Function.</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find solution to the Piecewise Defined Function.</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>\begin{align}
+              \frac{dy}{dx} = f(x) = \left\{
+                  \begin{array}{ll}
+                      x^2 & \quad x \lt 2 & \text{(case 1)} \\
+                      1 & \quad x \geq 2 & \text{(case 2)}
+                  \end{array}
+                  \;\;\;\;\;\;\;    \text{with} \;\;  y(0) = 0
+              \right.
+          \end{align}
+      </p>
+      <p>We need to solve this problem case by case. Let's start with the first case:</p>
+      <p><b>Case 1: $x \lt 2$</b></p>
+      <div style="padding-left: 20px;">
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xs^2ds \rightarrow$</p>
+        <p>$y(x) - y(0) = \frac{1}{3}s^3|_0^x \rightarrow$</p> 
+        <p>$y(x) = \frac{1}{3}x^3$</p>
+      </div>
+      <p>We have found that for the first case, the solution to the differential equation is $y(x) = \frac{1}{3}x^3$. Now, onto the second case.</p>
+      <p><b>Case 2: $x \geq 2$</b></p>
+      <div style="padding-left: 20px;">
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(x)ds \rightarrow $</p>
+        <p>$y(s)|_0^x = \int_0^2f(s)ds + \int_2^xf(s)ds \rightarrow $</p>
+        <p>$y(x) - y(0) = \int_0^2s^2ds + \int_2^x(1)ds \rightarrow $</p>
+        <p>$y(x) = \frac{1}{3}s^3|_0^2 + s|_2^x \rightarrow $</p>
+        <p>$y(x) = (\frac{8}{3} - 0) + (x - 2) \rightarrow $<p>
+        <p>$y(x) = x + \frac{8}{3} - 2 \rightarrow $</p> 
+        <p>$y(x) = x + \frac{2}{3}$</p>
+      </div>
+      <p>We have now found the solution to the differential equation for the second case. Now, combining the case 1 and case 2, we can display our final solution as:</p>
+      <p><b>Solution:</b> \begin{align}
+                              y(x) = \left\{
+                                  \begin{array}{ll}
+                                      \frac{1}{3}x^3 & \quad x \lt 2 \\
+                                      x + \frac{2}{3} & \quad x \geq 2
+                                  \end{array}
+                              \right.
+                          \end{align}</p>
+      </div>
+    </div><br>
+    <p>Another example, a more complicated one involving the stair function.</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find solution to the Piecewise Defined Function.</p>
+      
+    </div><br>    
 
 </body>
 </html>
