@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<html>
+<body>
+  
+  <h2 style="text-align: center;">Linear Algebra: MATH 2270</h2>
+  
+  <div style="padding-right: 50px; padding-left: 50px;">
+  <p>Linear Algebra is a type of mathematics that deals heavily with matices, vectors and linear combinations. A vector is a collection of numbers and a matrix is a collection of vectors:</p>
+  <p>        \begin{equation*}
+              \text{Vector: } \vec{v} =
+             \begin{bmatrix} 
+                5 \\ 
+                3 
+             \end{bmatrix}
+             \;\;\;\;\;\;\;\;\;
+              \text{Matrix: } A = 
+              \begin{bmatrix} 
+                5 & 8 \\ 
+                2 & 3 
+             \end{bmatrix}
+             \end{equation*}
+  </p>
+  <p>To write both in proper notation, we write an arrow over the variable if we are denoting a vector and typically the matrices are capitalized. Another example of proper notation would be the following:</p>
+  <p>If \begin{equation*}
+             A = 
+              \begin{bmatrix} 
+                3 & 7 \\ 
+                0 & 9 
+             \end{bmatrix}
+             \;\;\;\;\;\;\;\;\;
+             \vec{v} =
+             \begin{bmatrix} 
+                x \\ 
+                y 
+             \end{bmatrix}
+             \;\;\;\;\;\;\;\;\;
+             \text{and}
+             \;\;\;\;\;\;\;\;\;
+             \vec{b} =
+             \begin{bmatrix} 
+                2 \\ 
+                10 
+             \end{bmatrix}
+             \end{equation*}</p>
+  <p>Then \begin{equation*}
+             A\vec{v} = \vec{b} \;\;\;\;\;\; \implies \;\;\;\;\;\;
+              \begin{bmatrix} 
+                3 & 7 \\ 
+                0 & 9 
+             \end{bmatrix}
+             \begin{bmatrix} 
+                x \\ 
+                y 
+             \end{bmatrix}
+             =
+             \begin{bmatrix} 
+                2 \\ 
+                10 
+             \end{bmatrix}
+             \end{equation*}</p>
+    <p></p>
+
+
+  </div>
+
+</body>
+</html>
+
+{% endblock %}
