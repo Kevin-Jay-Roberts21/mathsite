@@ -165,7 +165,7 @@
     <p><b>Special Piecewise Defined Functions</b></p>
     <p>A few a these "special" piecewise defined functions are the step function and the ramp function:</p>
     <p>Step Function: \begin{equation}
-                      f(x) = step(x) = \left\{
+                      f(x) = \text{step}(x) = \left\{
                               \begin{array}{ll}
                                   0 & \quad x \lt 0 \\
                                   1 & \quad x \gt 0
@@ -174,7 +174,7 @@
                       \end{equation}
     </p>
     <p>Ramp Function: \begin{equation}
-                      f(x) = ramp(x) = \left\{
+                      f(x) = \text{ramp}(x) = \left\{
                               \begin{array}{ll}
                                   0 & \quad x \lt 0 \\
                                   x & \quad x \gt 0
@@ -228,8 +228,85 @@
     <p>Another example, a more complicated one involving the stair function.</p>
     <div style="border: solid 2px; padding: 10px;">
       <p><b>Example:</b> Find solution to the Piecewise Defined Function.</p>
-      
-    </div><br>    
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>\begin{equation*}
+          \text{Let} \;\;\; \frac{dy}{dx} = f(x) \;\;\;\;\;\;\;
+          f(x) = \begin{cases}
+                       \text{stair}(x) & x \lt 4 \\
+                       0 & x \geq 4
+                 \end{cases} \;\;\; \quad
+          \text{stair}(x) = \begin{cases}
+                       0 & x < 0 \\
+                       1 & 0 \leq x \lt 1 \\
+                       2 & 1 \leq x \lt 2 \\
+                       3 & 2 \leq x \lt 3 \\
+                       \vdots & \vdots\\
+                 \end{cases}
+          \end{equation*}</p>
+      <p>We are going to solve this problem just like we did the last. We have to break it down into steps:</p>
+      <p><b>Case 1: $x \lt 0$</b></p>
+      <div style="padding-left: 20px;">
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(s)|_0^x = \int_0^x0ds \implies \fbox{y(x) - y(0) = 0}$</p>
+      </div>
+      <p><b>Case 2: $0 \leq x \lt 1$</b></p>
+      <div style="padding-left: 20px;">
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(s) - y(0) = \int_0^x1ds \implies$</p>
+        <p>$y(x) - y(0) = s|_0^x \implies y(x) - y(0) = x - 0 \implies \fbox{y(x) - y(0) = x}$</p>
+      </div>
+      <p><b>Case 3: $1 \leq x \lt 2$</b></p>
+      <div style="padding-left: 20px;">
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies \int_0^1\frac{dy}{dx}ds + \int_1^x\frac{dy}{dx}ds = \int_0^1f(s)ds + \int_1^xf(s)ds \implies$</p>
+        <p>$y(s)|_0^1 + y(s)|_1^x = \int_0^1ds + \int_1^x2ds \implies y(1) - y(0) + y(x) - y(1) = s|_0^1 + 2s|_1^x \implies$</p>
+        <p>Notice that in the above, $y(1) - y(1)$ cancels and we end up with:</p>
+        <p>$y(x) - y(0) = 1 - 0 + 2x - 2 \implies \fbox{y(x) - y(0) = 2x - 1}$</p>
+      </div>
+      <p><b>Case 4: $2 \leq x \lt 3$</b></p>
+      <div style="padding-left: 20px;">
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(s)|_0^x = \int_0^1(1)ds + \int_1^2(2)ds + \int_2^x(3)ds \implies$</p> 
+        <p>$y(x) - y(0) = (1) + 2s|_1^2 + 3s|_2^x \implies y(x) - y(0) = 1 + (4 - 2) + (3x + 6) \implies$</p>
+        <p>$y(x) - y(0) = 1 + 2 + 3x - 6 \implies \fbox{y(x) - y(0) = 3x - 3}$</p>
+      </div>
+      <p><b>Case 5: $3 \leq x \lt 4$</b></p>
+      <div style="padding-left: 20px;">
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(x) - y(0) = \int_0^1(1)ds + \int_1^2(2)ds + \int_2^x(3)ds + \int_3^x(4)ds \implies$</p>
+        <p>$y(x) - y(0) = 1 + 2 + 3s|_2^3 + 4s|_3^x \implies y(x) - y(0) = 3 + 9 - 6 + 4x - 12 \implies$</p>
+        <p>$\fbox{y(x) - y(0) = 4x - 6}$</p> 
+      </div>
+      <p><b>Case 6: $x \leq 4$</b></p>
+      <div style="padding-left: 20px;">
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(x) - y(0) = \int_0^1(1)ds + \int_1^2(2)ds + \int_2^x(3)ds + \int_3^x(4)ds + \int_4^x(0)ds \implies$</p>
+        <p>$y(x) - y(0) = 1 + 2 + 3 + 4s|_3^4 + 0 \implies y(x) - y(0) = 1 + 2 + 3 + 16 - 12 \implies \fbox{y(x) - y(0) = 10}$</p>
+      </div>
+      <p>We have solved for each case! Now we can put everything into a nice solution:</p>
+      <p><b>Solution:</b> \begin{equation*}
+          y(x) = y(0) + \begin{cases}
+                       0 & x < 0 \\
+                       x & 0 \leq x \lt 1 \\
+                       2x - 1 & 1 \leq x \lt 2 \\
+                       3x - 3 & 2 \leq x \lt 3 \\
+                       4x - 6 & 3 \leq x \lt 4 \\
+                       10 & 4 \leq x
+                 \end{cases}
+          \end{equation*}</p>
+      </div>
+    </div><br> 
+    <p><b>The Logistic Model: Population Density</b></p>
+    <p>Now we will be getting into more complicated differential equations where we will use a method called separation of variables. These types of function will have the following Stanard Form where the right hand side of the equation involves two variables instead of one (x and y for example, instead of just x):</p>
+    <p>\begin{equation*}
+                 \begin{cases}
+                       \frac{dy}{dx} = f(x, y) \\
+                       y(x_o) = y_o
+                 \end{cases}
+          \end{equation*}</p>   
+    <p>A popular differential equation of this form is called the logistic equation, where $t$ is time and $P$ is population. $\alpha$ and $\beta$ are rates and $P_o$ is initial population:</p>
+    <p>\begin{equation*}
+                 \text{Logistic Equation:} \;\;\;\begin{cases}
+                       \frac{dP}{dt} = \alpha P - \beta P^2 \\
+                       P(0) = P_o
+                 \end{cases}
+          \end{equation*}</p>
+    <p>The goal is to solve for the population using separation of variables. Let's look at some examples:</p>
+    <p></p>
 
 </body>
 </html>
