@@ -361,7 +361,76 @@
                  \end{cases}
           \end{equation*}</p>
     <p>$F(x, y) = e^{xy}$ is continuous everywhere. $\frac{\partial F}{\partial y} = \frac{\partial}{\partial x}e^{xy} = e^{xy} * \frac{\partial}{\partial y}(xy) = e^{xy} * x = xe^{xy}$. And this is continuous everywhere. Thus the IVP has a unique solution everywhere in the $xy$ plane.</p>
-
+    <p><b>Partial Derivatives</b></p>
+    <p>This is when we are taking the derivative of a function with respect to a specific variable. So far we've only derived with respect to $x$ but we can also derive with respect to $y$ or any other such variable:</p>
+    <p>$\frac{\partial F}{\partial y}(x, y) = \lim_{\Delta y\to\infty}\frac{F(x, y + \Delta y) - F(x, y)}{\Delta y}$</p>
+    <p>$\frac{\partial F}{\partial x}(x, y) = \lim_{\Delta x\to\infty}\frac{F(x + \Delta x, y) - F(x, y)}{\Delta x}$</p>
+    <p>Let's try a little example:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> What is the partial derivative with respect to $x$ and $y$ if $F(x, y) = \frac{x + y}{x - y}$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p><b>Solutions:</b></p>
+      <p>$\frac{\partial F}{\partial x} = \frac{(1)(x - y) - (1)(x + y)}{(x - y)^2} = \frac{x - y - x - y}{(x - y)^2} = \frac{-2y}{(x - y)^2}$</p>
+      <p>$\frac{\partial F}{\partial y} = \frac{(1)(x - y) - (-1)(x - y)}{(x - y)^2} = \frac{x - y + x + y}{(x - y)^2} = \frac{2x}{(x - y)^2}$</p>
+      </div>
+    </div><br>
+    <p>Another quick example of taking the derivative with respect to $y$:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> What is the partial derivative with respect to $y$ if $F(x, y) = x^2y^2 + xy\cos(xy)$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p><b>Solution:</b></p>
+      <p>$\frac{\partial F}{\partial y} = x^2(2y) + (x*1)\cos(xy) + (xy)(-\sin(xy) * x) = 2x^2y + x\cos(xy) - x^2y\sin(xy)$</p>
+      </div>
+    </div><br>
+    <p><b>Separable Equations</b></p>
+    <p>Earlier I mentioned separable equations but dismissed them and didn't provide any good examples. Now we will get into them. A separable equation is one that has the following form:</p>
+    <p style="text-align: center;">$\frac{dy}{dx} = F(x, y) = f(x) * g(y)$</p>
+    <p>Meaning, we can separate the equation into two functions, one function containing only $y$ and one containing only $x$.</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> What is $g(y)$ and $f(x)$ in the following separable equation?: $\frac{dy}{dx} = x^2 - x^2y^2$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>Separate the $x$'s and the $y$'s:</p>
+      <p>$\frac{dy}{dx} = x^2(1 - y^2)$</p>
+      <p><b>Solution:</b> $f(x) = x^2$ and $g(y) = (1 - y^2)$</p>
+      </div>
+    </div><br>
+    <p>Now let's try solving the differential equation in the example above using separation of variables:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find the solution of the first order differential equation using separation of variables: $\frac{dy}{dx} = x^2(1 - y^2)$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p><b>Step 1:</b> Multiply both sides by an infinitesimal in $x \rightarrow dx$</p>
+      <div style="padding-left: 20px;">
+        <p>$\frac{dy}{dx} * dx = x^2(1 - y^2) * dx$</p>
+      </div>
+      <p><b>Step 2:</b> From calculus, we know that $\frac{dy}{dx}dx = dy$</p>
+      <div style="padding-left: 20px;">
+        <p>$dy = x^2(1 - y^2)dx$</p>
+      </div>
+      <p><b>Step 3:</b> Move the dependent variable factors to the left hand side of the equation</p>
+      <div style="padding-left: 20px;">
+        <p>$\frac{1}{1 - y^2}dy = x^2dx$</p>
+        <p>(Notice how the left hand side only deals with $y$ and the right hand side only deals with $x$)</p>
+      </div>
+      <p><b>Step 4:</b> Integrate both sides with respect to the variables</p>
+      <div style="padding-left: 20px;">
+        <p>$\int\frac{1}{1 - y^2}dy = \int x^2dx$</p>
+        <p>Let's first integrate the left hand side, to do this we need to use partial fractions:</p>
+        <p>$\frac{1}{(1 - y)(1 + y)} = \frac{A}{1 - y} + \frac{B}{1 + y} \implies 1 = A(1 + y) + B(1 - y)$</p>
+        <p>If we let $y = -1$, then $1 = B(1 + 1) + 0 \implies B = \frac{1}{2}$</p>
+        <p>If we let $y = 1$, then $1 = A(1 + 1) + 0 \implies A = \frac{1}{2}$</p>
+        <p>Now that we've solved for $A$ and $B$, we can rewrite our integration of the left hand side to be:</p>
+        <p>$\int\frac{\frac{1}{2}}{1 - y} + \frac{\frac{1}{2}}{(1 + y)}dy = -\frac{1}{2}ln|1 - y| + \frac{1}{2}ln|1 + y| + C$</p>
+        <p>Now after integrating the right hand side of the equation at the beginning of step 4, we can see it is $\frac{1}{3}x^3 + C$ and now let's combine the $C$'s from both integrations to get:</p>
+        <p>$-\frac{1}{2}ln|1 - y| + \frac{1}{2}ln|1 + y| = \frac{1}{3}x^3 + C \implies \frac{1}{2}ln|\frac{1 + y}{1 - y}| = \frac{1}{3}x^3 + C \implies ln|\frac{1 + y}{1 - y}| = \frac{2}{3}x^3 + 2C$</p>
+        <p>After multiplying a 2 everywhere, we see that we get $2C$, but $C$ is just a constant so $2C$ is a constant. So we can leave $2C$ to be $C$. Now let's exponentiate both sides:</p>
+        <p>$\frac{1 + y}{1 - y} = e^{\frac{2}{3}x^3 + C} \implies \frac{1 + y}{1 - y} = e^{\frac{2}{3}x^3} + e^{C} \implies \frac{1 + y}{1 - y} = Ae^{\frac{2}{3}x^3}$</p>
+        <p>Since $e^C$ is just another constant, we can just multiply it and denote it as a new constant $A$. Now let's simplify even further:</p>
+        <p>$(1 + y) = (1 - y)Ae^{\frac{2}{3}x^3} \implies y(1 + Ae^{\frac{2}{3}x^3}) = Ae^{\frac{2}{3}x^3} - 1 \implies $</p>
+      </div>
+      <p><b>Solution:</b> $y(x) = \frac{Ae^{\frac{2}{3}x^3} - 1}{Ae^{\frac{2}{3}x^3} + 1}$</p>
+      </div>
+    </div><br>
+    <p></p>
   </div>
 
 </body>
