@@ -108,7 +108,7 @@
       </div>
     </div><br>
     <p><b>Solving Differential Equations using Definite Integrals</b></p>
-    <p>Take a look at the following definition: $\int^a_b f(x)dx = F(x)|_a^b = F(b) - F(a)$</p>
+    <p>Take a look at the following definition: $\int^a_b f(x)dx = F(x)\Big|_a^b = F(b) - F(a)$</p>
     <p>We can use this method to solve the exact problem in the last example:</p>
     <div style="border: solid 2px; padding: 10px;">
       <p><b>Example:</b> Finding the solution to a differential equation with initial conditions using definite integral method:</p>
@@ -117,7 +117,7 @@
       <p>We know that the $y(1) = 7$ implies that $x_o = 1$ and $y_o = 7$. Now let's rewrite the problem and integrate:</p>
       <p>$\int^x_{x_o}\frac{dy}{ds}ds = \int^x_{x_o}s + \cos(s)ds$</p>
       <p>Don't be intimitadated by the $s$'s. All I did was replace all of the $x$'s in the intial problem to $s$'s. This is because we don't want to confuse integration of $s$'s with the $x$ bounds. This method is commonly known as adding a "dummy variable". After integration we get:</p>
-      <p>$y(s)|_{s=x_o}^{s=x} = (\frac{1}{2}s^2 + \sin(s))|_{s=x_o}^{s=x} \implies y(x) - y(x_o) = (\frac{1}{2}x^2 + \sin(x)) - (\frac{1}{2}x_o^2 + \sin(x_o)) \implies$</p>
+      <p>$y(s)\Big|_{s=x_o}^{s=x} = (\frac{1}{2}s^2 + \sin(s))\Big|_{s=x_o}^{s=x} \implies y(x) - y(x_o) = (\frac{1}{2}x^2 + \sin(x)) - (\frac{1}{2}x_o^2 + \sin(x_o)) \implies$</p>
       <p>$y(x) = \frac{1}{2}x^2 + \sin(x) - (\frac{1}{2}x_o^2 + \sin(x_o)) + y(x_o) \implies$</p>
       <p>$y(x) = \frac{1}{2}x^2 + \sin(x) - \frac{1}{2}(1)^2 - \sin(1) + y(1) \implies$</p>
       <p>$y(x) = \frac{1}{2}x^2 + \sin(x) - \frac{1}{2} - \sin(1) + 7 \implies$</p>
@@ -136,7 +136,7 @@
       <p><b>Example:</b> Find solution of differential equation using one of our definitions from above</p>
       <div style="padding-left: 50px; padding-right: 50px;">
       <p>$\frac{dy}{dx} = e^{-x^2}$ with $y(0) = 0$</p>
-      <p>First integrate: $\int_{s=x_o}^{s=x}\frac{dy}{ds}ds = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(s)|_{s=x_o}^{s=x} = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(x) - y(x_o) = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(x) = \int_{0}^{x}e^{-s^2}ds + 0$</p>
+      <p>First integrate: $\int_{s=x_o}^{s=x}\frac{dy}{ds}ds = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(s)\Big|_{s=x_o}^{s=x} = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(x) - y(x_o) = \int_{s=x_o}^{s=x}e^{-s^2}ds \implies y(x) = \int_{0}^{x}e^{-s^2}ds + 0$</p>
       <p>Now notice that we can multiply both sides by $(\frac{\sqrt{\pi}}{2} * \frac{2}{\sqrt{\pi}})$. Since the this is equivalent to 1, we can leave the left hand side alone, but we can change the right hand side to be the following:</p>
       <p>$y(x) = \int_{0}^{x}e^{-s^2}ds = \frac{\sqrt{\pi}}{2} * \frac{2}{\sqrt{\pi}} * \int_{0}^{x}e^{-s^2}ds = \frac{\sqrt{\pi}}{2} * erf(x)$</p>
       <p><b>Solution:</b> $y(x) = \frac{\sqrt{\pi}}{2} * erf(x)$</p>
@@ -200,16 +200,16 @@
       <p><b>Case 1: $x \lt 2$</b></p>
       <div style="padding-left: 20px;">
         <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xs^2ds \rightarrow$</p>
-        <p>$y(x) - y(0) = \frac{1}{3}s^3|_0^x \rightarrow$</p> 
+        <p>$y(x) - y(0) = \frac{1}{3}s^3\Big|_0^x \rightarrow$</p> 
         <p>$y(x) = \frac{1}{3}x^3$</p>
       </div>
       <p>We have found that for the first case, the solution to the differential equation is $y(x) = \frac{1}{3}x^3$. Now, onto the second case.</p>
       <p><b>Case 2: $x \geq 2$</b></p>
       <div style="padding-left: 20px;">
         <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(x)ds \rightarrow $</p>
-        <p>$y(s)|_0^x = \int_0^2f(s)ds + \int_2^xf(s)ds \rightarrow $</p>
+        <p>$y(s)\Big|_0^x = \int_0^2f(s)ds + \int_2^xf(s)ds \rightarrow $</p>
         <p>$y(x) - y(0) = \int_0^2s^2ds + \int_2^x(1)ds \rightarrow $</p>
-        <p>$y(x) = \frac{1}{3}s^3|_0^2 + s|_2^x \rightarrow $</p>
+        <p>$y(x) = \frac{1}{3}s^3\Big|_0^2 + s\Big|_2^x \rightarrow $</p>
         <p>$y(x) = (\frac{8}{3} - 0) + (x - 2) \rightarrow $<p>
         <p>$y(x) = x + \frac{8}{3} - 2 \rightarrow $</p> 
         <p>$y(x) = x + \frac{2}{3}$</p>
@@ -246,36 +246,36 @@
       <p>We are going to solve this problem just like we did the last. We have to break it down into steps:</p>
       <p><b>Case 1: $x \lt 0$</b></p>
       <div style="padding-left: 20px;">
-        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(s)|_0^x = \int_0^x0ds \implies \fbox{y(x) - y(0) = 0}$</p>
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(s)\Big|_0^x = \int_0^x0ds \implies \fbox{y(x) - y(0) = 0}$</p>
       </div>
       <p><b>Case 2: $0 \leq x \lt 1$</b></p>
       <div style="padding-left: 20px;">
         <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(s) - y(0) = \int_0^x1ds \implies$</p>
-        <p>$y(x) - y(0) = s|_0^x \implies y(x) - y(0) = x - 0 \implies \fbox{y(x) - y(0) = x}$</p>
+        <p>$y(x) - y(0) = s\Big|_0^x \implies y(x) - y(0) = x - 0 \implies \fbox{y(x) - y(0) = x}$</p>
       </div>
       <p><b>Case 3: $1 \leq x \lt 2$</b></p>
       <div style="padding-left: 20px;">
         <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies \int_0^1\frac{dy}{dx}ds + \int_1^x\frac{dy}{dx}ds = \int_0^1f(s)ds + \int_1^xf(s)ds \implies$</p>
-        <p>$y(s)|_0^1 + y(s)|_1^x = \int_0^1ds + \int_1^x2ds \implies y(1) - y(0) + y(x) - y(1) = s|_0^1 + 2s|_1^x \implies$</p>
+        <p>$y(s)\Big|_0^1 + y(s)\Big|_1^x = \int_0^1ds + \int_1^x2ds \implies y(1) - y(0) + y(x) - y(1) = s\Big|_0^1 + 2s\Big|_1^x \implies$</p>
         <p>Notice that in the above, $y(1) - y(1)$ cancels and we end up with:</p>
         <p>$y(x) - y(0) = 1 - 0 + 2x - 2 \implies \fbox{y(x) - y(0) = 2x - 1}$</p>
       </div>
       <p><b>Case 4: $2 \leq x \lt 3$</b></p>
       <div style="padding-left: 20px;">
-        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(s)|_0^x = \int_0^1(1)ds + \int_1^2(2)ds + \int_2^x(3)ds \implies$</p> 
-        <p>$y(x) - y(0) = (1) + 2s|_1^2 + 3s|_2^x \implies y(x) - y(0) = 1 + (4 - 2) + (3x + 6) \implies$</p>
+        <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(s)\Big|_0^x = \int_0^1(1)ds + \int_1^2(2)ds + \int_2^x(3)ds \implies$</p> 
+        <p>$y(x) - y(0) = (1) + 2s\Big|_1^2 + 3s\Big|_2^x \implies y(x) - y(0) = 1 + (4 - 2) + (3x + 6) \implies$</p>
         <p>$y(x) - y(0) = 1 + 2 + 3x - 6 \implies \fbox{y(x) - y(0) = 3x - 3}$</p>
       </div>
       <p><b>Case 5: $3 \leq x \lt 4$</b></p>
       <div style="padding-left: 20px;">
         <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(x) - y(0) = \int_0^1(1)ds + \int_1^2(2)ds + \int_2^x(3)ds + \int_3^x(4)ds \implies$</p>
-        <p>$y(x) - y(0) = 1 + 2 + 3s|_2^3 + 4s|_3^x \implies y(x) - y(0) = 3 + 9 - 6 + 4x - 12 \implies$</p>
+        <p>$y(x) - y(0) = 1 + 2 + 3s\Big|_2^3 + 4s\Big|_3^x \implies y(x) - y(0) = 3 + 9 - 6 + 4x - 12 \implies$</p>
         <p>$\fbox{y(x) - y(0) = 4x - 6}$</p> 
       </div>
       <p><b>Case 6: $x \leq 4$</b></p>
       <div style="padding-left: 20px;">
         <p>$\int_0^x\frac{dy}{dx}ds = \int_0^xf(s)ds \implies y(x) - y(0) = \int_0^1(1)ds + \int_1^2(2)ds + \int_2^x(3)ds + \int_3^x(4)ds + \int_4^x(0)ds \implies$</p>
-        <p>$y(x) - y(0) = 1 + 2 + 3 + 4s|_3^4 + 0 \implies y(x) - y(0) = 1 + 2 + 3 + 16 - 12 \implies \fbox{y(x) - y(0) = 10}$</p>
+        <p>$y(x) - y(0) = 1 + 2 + 3 + 4s\Big|_3^4 + 0 \implies y(x) - y(0) = 1 + 2 + 3 + 16 - 12 \implies \fbox{y(x) - y(0) = 10}$</p>
       </div>
       <p>We have solved for each case! Now we can put everything into a nice solution:</p>
       <p><b>Solution:</b> \begin{equation*}
@@ -430,7 +430,26 @@
       <p><b>Solution:</b> $y(x) = \frac{Ae^{\frac{2}{3}x^3} - 1}{Ae^{\frac{2}{3}x^3} + 1}$</p>
       </div>
     </div><br>
-    <p></p>
+    <p>Another quick example:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find the solution of the differential equation: $\frac{dP}{dt} = \alpha P$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>We can solve this equation by separation of variables. Note that $f(t) = \alpha$ and $g(P) = P$:</p>
+      <p>$\frac{dP}{dt}dt = \alpha Pdt \implies dP = \alpha Pdt \implies \frac{1}{P}dP = \alpha dt \implies \int\frac{1}{P}dP = \int\alpha dt \implies$</p>
+      <p>$ln|P| = \alpha t + C \implies e^{ln|P|} = e^{\alpha t + C} \implies P(t) = e^{\alpha t} * e^{C} \implies$</p>
+      <p><b>Solution:</b> $P(t) = Ae^{\alpha t}$</p>
+      </div>
+    </div><br>
+    <p>Another problem of the same form but with initial conditions:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find the solution of the differential equation: $\frac{dy}{dx} = \frac{y}{x}$ with $y(1) = 2$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>First off, let's recall that $y(1) = 2$ indicates that $y_o = 2$ and $x_o = 1$. Now let's separate varibales:</p>
+      <p>$\frac{dy}{dx}dx = \frac{y}{x}dx \implies dy = \frac{y}{x}dx \implies \frac{1}{y}dy = \frac{1}{x}dx \implies \int_{y_o}^y\frac{1}{s}ds = \int_{x_o}^x\frac{1}{c}dc \implies$</p>
+      <p>$ln|s|\Big|_{y_o}^y = ln|c|\Big|_{x_o}^x \implies ln|y| - ln|y_o| = ln|x| - ln|x_o| \implies ln|y| = ln|x| + ln|2| \implies e^{ln|y|} = e^{ln|2x|} \implies $</p>
+      <p><b>Solution:</b> $y(x) = 2x$</p>
+      </div>
+    </div><br>
   </div>
 
 </body>
