@@ -478,6 +478,51 @@
       <p><b>Solution:</b> $y(x) = \tan(\frac{1}{3}x^3 + C)$</p>
       </div>
     </div><br>
+    <p><b>First Order Linear ODE's</b></p>
+    <p>Some equations we cannot simply separate variables and integrate. These such equations have the following form:</p>
+    <p style="text-align: center;">$\frac{dy}{dx} + p(x)y = f(x)$</p>
+    <p>It is impossible to separate the above expression into $x$'s on one side and $y$'s on the other. Therefore, we need a new method to solve this differential equation.</p>
+    <p>The method we will use is based on the product rule of differentiation:</p>
+    <p style="text-align: center;">$\frac{d}{dx}(\mu y) = \frac{d\mu}{dx}y + \mu \frac{dy}{dx}$</p>
+    <p>Compare this to the standard form of the 1st order linear ODE: $\frac{dy}{dx} + p(x)y = f(x)$</p>
+    <p>Multiply this ODE by $\mu(x):$</p>
+    <p>$\mu(x)\frac{dy}{dx} + \mu(x)p(x)y = \mu(x)f(x)$.</p> 
+    <p>The product rule indicates:</p> 
+    <p>$\mu\frac{dy}{dx} + \frac{d\mu}{dx}y \implies \frac{d\mu}{dx} = \mu(x)p(x) \implies \frac{d\mu}{dx} = \mu p(x) \implies \frac{d\mu}{dx}dx = \mu pdx \implies d\mu = \mu pdx \implies \frac{1}{\mu}d\mu = pdx$</p>
+    <p>Now we integrate:</p>
+    <p>$\int\frac{1}{\mu}d\mu = \int pdx \implies \mu = e^{\int p(x)dx} \rightarrow $ integrating factor $\rightarrow \frac{d}{dx}(\mu p) = \frac{d\mu}{dx}y + \mu\frac{dy}{dx}$</p>
+    <p>To clear this up, let's define some steps when we come across a problem with the form $\frac{dy}{dx} + p(x)y = f(x)$:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Steps on solving differential equation with the form: $\frac{dy}{dx} + p(x)y = f(x)$:</b></p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+        <p><b>Step 1:</b> Compute an integrating factor:</p>
+        <div style="padding-left: 20px;">
+          <p>$\mu = e^{\int p(x)dx}$</p>
+        </div>
+        <p><b>Step 2:</b> Write out new equation to solve as:</p>
+        <div style="padding-left: 20px;">
+          <p>$\frac{d}{dx}(\mu y) = \mu f(x)$</p>
+        </div>
+        <p><b>Step 3:</b> Integrate.</p>
+        <div style="padding-left: 20px;">
+          <p>$\mu y = \int \mu(s)f(s)ds + C \implies y = \frac{1}{\mu(s)} \int\mu(s)f(s)ds + \frac{C}{\mu(x)}$</p>
+        </div>
+      </div>
+    </div><br>
+    <p>Finally, let's see this process in action with an example:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find the solution of the differential equation: $y' + \frac{4}{x}y = x^3$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>Firstly, let's identify that $f(x) = x^3$ and $p(x) = \frac{4}{x}$.</p>
+      <p>If $p(x) = \frac{4}{x}$, then we have:</p>
+      <p>$\mu(x) = e^{\int p(x)dx} = e^{\int\frac{4}{x}dx} = e^{4ln|x|} = e^{ln|x^4|} = x^4$</p>
+      <p>Now we solve $\frac{d}{dx}(\mu y) = \mu f(x)$:</p>
+      <p>$\frac{d}{dx}(\mu y) = \mu f(x) \implies \frac{d}{dx}(x^4y) = x^3x^4 \implies \frac{d}{dx}(x^4y) = x^7$</p>
+      <p>Now we need to integrate:</p>
+      <p>$\int\frac{d}{dx}(x^4y)dx = \int x^7dx \implies x^4y = \frac{1}{8}x^8 + C \implies$</p>
+      <p><b>Solution:</b> $y(x) = \frac{1}{8}x^4 + Cx^{-4}$</p>
+      </div>
+    </div><br>
     <p></p>
   </div>
 
