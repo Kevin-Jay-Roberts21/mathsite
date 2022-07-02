@@ -509,7 +509,7 @@
         </div>
       </div>
     </div><br>
-    <p>Finally, let's see this process in action with an example:</p>
+    <p>Finally, let's see this process in action with a few examples:</p>
     <div style="border: solid 2px; padding: 10px;">
       <p><b>Example:</b> Find the solution of the differential equation: $y' + \frac{4}{x}y = x^3$</p>
       <div style="padding-left: 50px; padding-right: 50px;">
@@ -523,7 +523,35 @@
       <p><b>Solution:</b> $y(x) = \frac{1}{8}x^4 + Cx^{-4}$</p>
       </div>
     </div><br>
-    <p></p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find the solution of the differential equation: $y' + 6xy = x^2$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>First find the integrating factor:</p>
+      <p>$\mu = e^{\int 6xdx} = e^{3x^2}$</p>
+      <p>$\frac{d}{dx}(\mu y) = \mu x^2 \implies \frac{d}{dx}(e^{3x^2} y) = e^{3x^2}x^2 \implies \int\frac{d}{dx}(e^{3x^2}y)dx = \int e^{3x^2}x^2dx \implies e^{3x^2}y = \int e^{3x^2}x^2dx + C \implies$</p>
+      <p><b>Solution:</b> $y(x) = e^{-3x^2}\int e^{3x^2}x^2dx + Ce^{-3x^2}$</p>
+      </div>
+    </div><br>
+    <p>When coming across differential equations like this, the key is to first try to rewrite the equation into the form: $\frac{dy}{dx} + p(x)y = f(x)$. For example, if we have the following function: $e^{2x}\frac{dy}{dx} = 40 - 3e^xy$. Then we rewrite it as: $\frac{dy}{dx} + 3e^{-x}y = 40e^{-2x}$</p>
+    <p><b>U Substitution</b></p>
+    <p>What if we come accross an equation we haven't learned to solve before? Say we have a differential equation that we cannot solve by direct integration, separation of variables, and it is not 1st Order Linear. The trick to solving such an equation is by u substitution. Let's look at an example:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find the solution of the differential equation: $\frac{dy}{dx} = (x + y)^2$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>The equation cannot be solved by direct integration, we cannot separate the $x$'s and $y$'s, and it is not first order linear. Let's try a $u$ substitution by letting $u = x + y$:</p>
+      <p>$u = x + y \implies y = u - x \implies \frac{dy}{dx} = \frac{du}{dx} - 1$</p>
+      <p>Plug in:</p>
+      <p>$\frac{du}{dx} - 1 = (u)^2 \implies \frac{du}{dx} = u^2 + 1$</p>
+      <p>Now this is separable and we can solve by separation of variables (separating $u$ and $x$):</p>
+      <p>$\frac{du}{dx}dx = (1 + u^2)dx \implies du = (1 + u^2)dx \implies \frac{1}{1 + u^2}du = dx \implies$</p> 
+      <p>$\int \frac{1}{1 + u^2}du = \int 1dx \implies \arctan(u) = x + C \implies u = \tan(x + C) \implies$</p>
+      <p>Now we plug in $u = x + y$</p>
+      <p>$x + y = \tan(x + C) \implies$</p>
+      <p><b>Solution:</b> $y(x) = \tan(x + C) - x$</p>
+      </div>
+    </div><br>
+    <p>Let's see another example with this method:</p>
+    
   </div>
 
 </body>
