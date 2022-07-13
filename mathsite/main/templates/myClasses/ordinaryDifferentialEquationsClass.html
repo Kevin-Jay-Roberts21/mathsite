@@ -551,7 +551,24 @@
       </div>
     </div><br>
     <p>Let's see another example with this method:</p>
-    
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find the solution of the differential equation: $\frac{dy}{dx} = \frac{1}{3x - 5y + 12} = f(x, y)$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>The equation cannot be solved by direct integration, we cannot separate the $x$'s and $y$'s, and it is not first order linear. Let's try a $u$ substitution by letting $u = 3x - 5y + 12$:</p>
+      <p>$u = 3x - 5y + 12 \implies \frac{1}{3x - 5y + 12} = \frac{1}{u}$</p>
+      <p>Now let's derive $u$ with respect to $x$, then we get:</p>
+      <p>$\frac{du}{dx} = 3 - 5\frac{dy}{dx} \implies \frac{dy}{dx} = \frac{3 - \frac{du}{dx}}{5} \implies \frac{dy}{dx} = \frac{3}{5} - \frac{1}{5}\frac{du}{dx}$</p>
+      <p>Now we can plug in $\frac{dy}{dx}$ to our earlier equation:</p>
+      <p>$\frac{3}{5} - \frac{1}{5}\frac{du}{dx} = \frac{1}{u} \implies -\frac{1}{5}\frac{du}{dx} = \frac{1}{u} - \frac{3}{5} \implies \frac{du}{dx} = -\frac{5}{u} + 3 = \frac{-5 + 3u}{u} \implies$</p>
+      <p>$\frac{du}{dx}dx = \frac{3u - 5}{u}dx \implies du = \frac{3u - 5}{u}dx \implies \frac{u}{3u - 5}du = dx$</p>
+      <p>Finally, let's integrate:</p>
+      <p>$\int \frac{u}{3u - 5}du = \int 1dx \implies \int \frac{u}{3u - 5}du = x + C \implies \int \frac{u}{3u - 5}du \implies$</p>
+      <p>This will be our final solution instead of trying to find a way to solve for $y$:</p>
+      <p><b>Solution: </b>$(3x - 5y + 12) + \frac{5}{3}ln|3(3x - 5y + 12) - 5| = 3x + C$</p>
+      </div>
+    </div><br>
+    <p></p>
+
   </div>
 
 </body>
