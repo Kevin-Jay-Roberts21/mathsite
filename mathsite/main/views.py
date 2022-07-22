@@ -80,6 +80,16 @@ def myClasses(response):
 	else:
 		return render(response, template_name, {action:action})
 	return render(response, template_name, {})
+def calculus1Class(response):
+	template_name = "myClasses/calculus1Class.html"
+	action = "/calculus1Class/"
+	if response.method == "POST":
+		searchPages = response.POST["searchPages"]
+		templates = runSearch(searchPages)
+		return render(response, "main/searchHome.html", {action:action, "templates":templates})
+	else:
+		return render(response, template_name, {action:action})
+	return render(response, template_name, {})
 def linearAlgebraClass(response):
 	template_name = "myClasses/linearAlgebraClass.html"
 	action = "/linearAlgebraClass/"
@@ -116,7 +126,7 @@ def runSearch(word):
 	# open all templates and search for the word
 	BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	# Define the filename and the full file path
-	allTemplates = ['algebra/algebraHome', 'calculus/calculusHome', 'examples/examplesHome', 'linearAlgebra/linearAlgebraHome', 'main/home', 'myClasses/myClassesHome', 'myClasses/ordinaryDifferentialEquationsClass', 'myClasses/linearAlgebraClass', 'research/researchHome']
+	allTemplates = ['algebra/algebraHome', 'calculus/calculusHome', 'examples/examplesHome', 'linearAlgebra/linearAlgebraHome', 'main/home', 'myClasses/myClassesHome', 'myClasses/ordinaryDifferentialEquationsClass', 'myClasses/calculus1Class','myClasses/linearAlgebraClass', 'research/researchHome']
 
 	templatesContainingWord = []
 	for i in range(len(allTemplates)):

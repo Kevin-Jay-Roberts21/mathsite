@@ -10,6 +10,7 @@ urlpatterns = [
 	path("myClassesHome/", views.myClasses, name="myClasses"),
 	path("linearAlgebraClass/", views.linearAlgebraClass, name="linearAlgebraClass"),
 	path("ordinaryDifferentialEquationsClass/", views.ordinaryDifferentialEquationsClass, name="ordinaryDifferentialEquationsClass"),
+	path("calculus1Class/", views.calculus1Class, name="calculus1Class"),
 	path("researchHome/", views.research, name="research"),
 	path("examplesHome/", views.examples, name="examples"),
 	path("searchHome/", views.search, name="search"),
