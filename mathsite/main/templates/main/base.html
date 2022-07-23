@@ -2,12 +2,9 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/javascript" href="{% static 'js/script.js' %}">
 
 <!-- //
 // USED FOR INLINE USES OF MATHJAX LATEX CODE
@@ -26,8 +23,6 @@
 </script>
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-
-<script type="text/javascript" src="/distrib/MathJax/MathJax.js"></script>
 
 <header>
 
@@ -78,6 +73,20 @@ window.addEventListener('click', ({ target }) => {
   
   if (clickedOnClosedPopup) popup.classList.add('show');  
 });
+</script>
+
+<script type="text/javascript">
+	function showDiv(divid) {
+
+	  var x = document.getElementById(divid);  
+	  
+	  if (x.style.display == "none") {
+	    x.style.display = "block";
+	  } 
+	  else {
+	    x.style.display = "none";
+	  }  
+	}
 </script>
 
 
