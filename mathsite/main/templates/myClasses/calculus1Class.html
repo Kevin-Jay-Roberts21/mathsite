@@ -17,9 +17,91 @@
     <div style="padding-left: 50px; padding-right: 50px;">
     <p>We can plug in any $x$ and we will get an output. Therefore, the set of all real numbers, $\mathbb{R}$, is the domain of $f(x)$. This can also be written as $(-\infty, \infty)$. However, it' better to specify that <u>all real numbers</u> are the domain. Later on we will end up seeing some cases where some specific $x$ values will not be allowed.</p>
     <p>The range of the equation is $(-\infty, \infty)$. Why? We know this because for whatever $x$ we plug in, there will be an output value. And this goes on to infinity. Here is a graph to easier see our function, the domain, and the range:</p>
-    <!-- <p> PUT A GRAPH HERE </p> -->
+    
+    <script type="text/tikz">
+      \begin{tikzpicture}
+        \draw (0,0) circle (1in);
+      \end{tikzpicture}
+    </script>
+
+    <div id="canvas-holder" style="width:40%"> 
+         <canvas id="myChart"></canvas> 
+      </div> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> 
+      <script>
+      var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {//w  ww  .  ja va  2s .  com
+  type: 'line',
+  data: {
+    datasets: [{
+      label: 'Equation Plotted',
+      data: [{
+        x: 0,
+        y: 2
+      }, {
+        x: 1,
+        y: 3
+      }, {
+        x: 2,
+        y: 2
+      }, {
+        x: 1.02,
+        y: 0.4
+      }, {
+        x: 0,
+        y: -1
+      }],
+      backgroundColor: [
+        'rgba(123, 83, 252, 0.8)',
+        'rgba(123, 83, 252, 0.8)',
+        'rgba(123, 83, 252, 0.8)',
+        'rgba(123, 83, 252, 0.8)',
+        'rgba(123, 83, 252, 0.8)',
+        'rgba(123, 83, 252, 0.8)'
+      ],
+      borderColor: [
+        'rgba(33, 232, 234, 1)',
+        'rgba(33, 232, 234, 1)',
+        'rgba(33, 232, 234, 1)',
+        'rgba(33, 232, 234, 1)',
+        'rgba(33, 232, 234, 1)',
+        'rgba(33, 232, 234, 1)'
+      ],
+      borderWidth: 1
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        type: 'linear',
+        position: 'bottom',
+        ticks: {
+          min: -5,
+          max: 5,
+          stepSize: 1,
+          fixedStepSize: 1,
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: -5,
+          max: 5,
+          stepSize: 1,
+          fixedStepSize: 1,
+        }
+      }]
+    }
+  }
+});
+      //# sourceURL=pen.js
+    
+      </script> 
+
+    
     </div>
   </div>
+  <p>Another example...</p>
 
 
 
