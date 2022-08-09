@@ -603,6 +603,17 @@
       </div>
     </div><br>
     <p>Before moving on, I'd like to clear up something that I did on the last example.</p>
+    <p>In the problem I said to multiply both sides by $dx$, thus getting a $du$ on the left hand side and a $dx$ on the right hand side. This is phrased incorrectly mathematically. Remember that $\frac{d}{dx}$ is an operator that we take on a function. Let's say $y = x^2$, then if we take the derivative of $y$ with respect to $x$, we get $2x$, with the syntax being: $\frac{d}{dx}(y) = \frac{d}{dx}(x^2) = 2x$. This is an example of the operator being used. In the example above, however, we seem to disregard that $\frac{d}{dx}$ is an operator. Instead we define $\frac{dy}{dx}$ as the change in $y$: $\Delta y$, divided by the change in $x$: $\Delta x$. This allows us to multiply and divide $dx$ and $dy$. Though multiplying $dx$ to both sides is very tempting in many of these seperable equations, it is technically mathematically incorrect. There's a lot more happening behind the scenes. Let's look at a simple example where we see what happens behind the scenes:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Find the solution to the differential equation: $\frac{dy}{dx} = yx^2$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>In our first step to separate the variables, let's divide both sides of the equation by $y$ and get:</p>
+      <p>$\frac{1}{y}\frac{dy}{dx} = x^2$</p>
+      <p>Now we integrate both sides of the equation:</p>
+      <p>$\int\frac{1}{y}\frac{dy}{dx}dx = \int x^2dx$</p>
+      
+      </div>
+    </div><br>
 
   </div>
 
