@@ -611,7 +611,20 @@
       <p>$\frac{1}{y}\frac{dy}{dx} = x^2$</p>
       <p>Now we integrate both sides of the equation:</p>
       <p>$\int\frac{1}{y}\frac{dy}{dx}dx = \int x^2dx$</p>
-      
+      <p>We are most interested in what's happening with the left hand side of this equation as the right hand side equals $\frac{1}{3}x^3$ with simple integration. So let's figure that what's going on with the left hand side:</p>
+      <p>$\int\frac{1}{y}\frac{dy}{dx}dx$</p>
+      <p>Somehow we need to simplify this equation, let's start by writing down some definitions that we know from calculus:</p>
+      <p>$\frac{dy}{dx} = \lim_{h\to\infty}\frac{f(x + h) - f(x)}{h}$</p>
+      <p>We know that the "change in $x$" and the "change in $y$" are written as $dx$ and $dy$ but they can also be written as $\Delta x$ and $\Delta y$. Now with this in mind, we can write:</p>
+      <p>$\frac{dy}{dx} = \lim_{h\to\infty}\frac{f(x + h) - f(x)}{h} = \frac{\Delta y}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{\Delta x}$</p>
+      <p>With one final definition, from calculus we also know that $f(x + \Delta x) - f(x) = \Delta y$.</p>
+      <p>Finally, if $\frac{dy}{dx} = \frac{\Delta y}{\Delta x}$ and $\Delta y = dy$ and $\Delta x = dx$, then we can rewrite the integral to be:</p>
+      <p>$\int\frac{1}{y}\frac{\Delta y}{\Delta x}\Delta x$</p>
+      <p>Canceling out the $\Delta x$'s and letting $\Delta y = dy$, finally our integral becomes:</p>
+      <p>$\int\frac{1}{y}dy$</p>
+      <p>We are allowed to cancel out the $\Delta x$'s because they are defined as the same infinitesimally small change in $x$. After integrating this and combinding our $\frac{1}{3}x^3$, we get:</p>
+      <p>$ln|y| = \frac{1}{3}x^3 + C$</p>
+      <p>Exponentiating both sides, our final solution is $y = Ae^{\frac{1}{3}x^3}$ where $A = e^C$ (just another constant).</p>
       </div>
     </div><br>
 
