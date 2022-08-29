@@ -8,6 +8,7 @@ urlpatterns = [
 	path("calculusHome/", views.calculus, name="calculus"),
 	path("linearAlgebraHome/", views.linearAlgebra, name="linearAlgebra"),
 	path("myClassesHome/", views.myClasses, name="myClasses"),
+	path("linearAlgebraAndDifferentialEquationsClass/", views.linearAlgebraAndDifferentialEquationsClass, name="linearAlgebraAndDifferentialEquationsClass"),
 	path("linearAlgebraClass/", views.linearAlgebraClass, name="linearAlgebraClass"),
 	path("ordinaryDifferentialEquationsClass/", views.ordinaryDifferentialEquationsClass, name="ordinaryDifferentialEquationsClass"),
 	path("calculus1Class/", views.calculus1Class, name="calculus1Class"),

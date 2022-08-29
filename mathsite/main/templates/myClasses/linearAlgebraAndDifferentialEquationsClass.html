@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<html>
+<body>
+  
+  <h2 style="text-align: center;">Linear Algebra and Differential Equations: MATH 2250</h2>
+  <div style="padding-right: 50px; padding-left: 50px;">
+    <p>This class is obviously a combination of linear algebra and differential equations. I found this class quite useful and entertaining because of it's applied aspect. We did more than just examples on how to solve a DE. We  took time to understand what they mean.</p>
+    <p>To start off, let's first go over some simple examples on how to solve linear vs. non-linear DE's (differential equations):</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Solve the first order, linear differential equation: $x' = t$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>Firstly, we know that $x' = \frac{dx}{dt}$. So let's rewrite as: $\frac{dx}{dt} = t$.</p>
+      <p>After integrating both sides we get:</p>
+      <p>$\int \frac{dx}{dt}dt = \int tdt \implies x(t) = \frac{1}{2}t^2 + C$</p>
+      <p>$x(t) = \frac{1}{2}t^2 + C$ is our solution.</p>
+      </div>
+    </div>
+    <p>Let's try another, similar looking differntial equation:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Solve the first order, linear differential equation: $x' = x$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>Firstly, we know that $x' = \frac{dx}{dt}$. So let's rewrite as: $\frac{dx}{dt} = x$.</p>
+      <p>Now we use an ODE method called separation of variables where we move all the same variables to one side of the equation. For our example, I'm going to move all the $x$'s to the left hand side of the equation:</p>
+      <p>$\frac{1}{x}\frac{dx}{dt} = 1$. And now we integrate:</p>
+      <p>$\int \frac{1}{x}\frac{dx}{dt}dt = \int 1dt \implies ln|x| = t + C$</p>
+      <p>Now we exponentiate both sides: $e^{ln|x|} = e^{t + C} \implies x(t) = e^{t + C} = e^te^C = Ae^t$. Where $A$ is just another constant. Our final solution is:</p>
+      <p>$x(t) = Ae^t$</p>
+      </div>
+    </div>
+    <p>Now let's move on to another, more difficult example. This one is still linear however, it's second order because we have a variable inside where we take the second derivative of it.</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Solve the second order, linear differential equation: $x'' + 3x' + 2x = 6$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>There are a few ways to solve this second order differential equation. One of which is to just guess and check! Recall that our final solution is going to be a function $x(t) = blah$. We have to find $blah$ and $blah$ is what we will be guessing and checking for.</p>
+      <p>You're probably thinking, "This is ridiculous! How am I suppose to just guess the solution of a very complicated equation?" To this I will say, by understanding derivatives. We need our function $x(t)$ to something where when we take a derivative, we don't get anything exponential. For example, $\sin(x)$. We could take the derivative of $\sin(x)$ 100 times and it wouldn't grow one bit. Another example of such a function would be $e^x$.</p>
+      <p>Now, let's make a guess. By just looking at the problem, I'm going to guess $x(t) = 3$. If this were my guess, then x' = 0, and x'' = 0. Now after plugging everything in we get: $(0) + 3(0) + 2(3) = 6$. Wow! Lucky guess. Before moving on, I want to show that there are actually more solution involving more in depth derivatives (using $\sin(x)$ or $e^x$).</p>
+      <p>Let's take a look at the guess $x(t) = e^{-2t} \implies x' = -2e^{-2t} \implies x'' = 4e^{-2t}$.</p>
+      <p>Now, plugging everything in we get:</p>
+      <p>$(4e^{-2t}) + 3(-2e^{-2t}) + 2(e^{-2t}) = 6 \implies $</p>
+      <p>$4e^{-2t} + -6e^{-2t} + 2e^{-2t} = 6 \implies 0 = 6$. Wrong! Thus, $e^{-2t}$ was an incorrect guess. But it was close! It looked like all we needed at the end was there to be $2(e^{-2t} + 3)$. Adding that plus 3 could be our solution. By modifying it slightly, let's try another guess:</p>
+      <p>Guess is $x(t) = e^{-2t} + 3 \implies x' = -2e^{-2t} \implies x'' = 4e^{-2t}$</p>
+      <p>Plug everything in:</p>
+      <p>$(4e^{-2t}) + 3(-2e^{-2t}) + 2(e^{-2t} + 3) = 6 \implies $</p>
+      <p>$4e^{-2t} + -6e^{-2t} + 2e^{-2t} + 6 = 6 \implies $</p>
+      <p>$6e^{-2t} + -6e^{-2t} + 6 = 6 \implies 6 = 6$</p>
+      <p>They are equal! Thus, $x(t) = e^{-2t} + 3$ is a possible solution and so is $x(t) = 3$.</p>
+      </div>
+    </div>
+    <p>This method of guessing and checking is not necessarily preferred because it could take a long time to guess the correct solution. There are other ways to solve the equation above where like finding a characteristic equation to a homogeneous solution and then adding that solution to a calculated particular solution. Later in the course we will get into this a little more in depth.</p>
+    
+
+  </div>
+</body>
+</html>
+
+{% endblock %}
