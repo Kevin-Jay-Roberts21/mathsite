@@ -19,7 +19,7 @@
       <p>$x(t) = \frac{1}{2}t^2 + C$ is our solution.</p>
       </div>
     </div>
-    <p>Let's try another, similar looking differntial equation:</p>
+    <p>Let's try another, similar looking differential equation:</p>
     <div style="border: solid 2px; padding: 10px;">
       <p><b>Example:</b> Solve the first order, linear differential equation: $x' = x$</p>
       <div style="padding-left: 50px; padding-right: 50px;">
@@ -37,7 +37,7 @@
       <div style="padding-left: 50px; padding-right: 50px;">
       <p>There are a few ways to solve this second order differential equation. One of which is to just guess and check! Recall that our final solution is going to be a function $x(t) = blah$. We have to find $blah$ and $blah$ is what we will be guessing and checking for.</p>
       <p>You're probably thinking, "This is ridiculous! How am I suppose to just guess the solution of a very complicated equation?" To this I will say, by understanding derivatives. We need our function $x(t)$ to something where when we take a derivative, we don't get anything exponential. For example, $\sin(x)$. We could take the derivative of $\sin(x)$ 100 times and it wouldn't grow one bit. Another example of such a function would be $e^x$.</p>
-      <p>Now, let's make a guess. By just looking at the problem, I'm going to guess $x(t) = 3$. If this were my guess, then x' = 0, and x'' = 0. Now after plugging everything in we get: $(0) + 3(0) + 2(3) = 6$. Wow! Lucky guess. Before moving on, I want to show that there are actually more solution involving more in depth derivatives (using $\sin(x)$ or $e^x$).</p>
+      <p>Now, let's make a guess. By just looking at the problem, I'm going to guess $x(t) = 3$. If this were my guess, then x' = 0, and x'' = 0. Now after plugging everything in we get: $(0) + 3(0) + 2(3) = 6$. Wow! Lucky guess. Before moving on, I want to show that there are actually more solutions involving more in depth derivatives (using $\sin(x)$ or $e^x$).</p>
       <p>Let's take a look at the guess $x(t) = e^{-2t} \implies x' = -2e^{-2t} \implies x'' = 4e^{-2t}$.</p>
       <p>Now, plugging everything in we get:</p>
       <p>$(4e^{-2t}) + 3(-2e^{-2t}) + 2(e^{-2t}) = 6 \implies $</p>
@@ -51,8 +51,37 @@
       </div>
     </div>
     <p>This method of guessing and checking is not necessarily preferred because it could take a long time to guess the correct solution. There are other ways to solve the equation above where like finding a characteristic equation to a homogeneous solution and then adding that solution to a calculated particular solution. Later in the course we will get into this a little more in depth.</p>
-    
-
+    <p><b>First Order DEs</b></p>
+    <p>A first order differential equation has the following form:</p>
+    <p style="text-align: center;">$\frac{dy}{dt} = ay + q(t)$</p>
+    <p>Where $t$ is time, $y$ is "typically" height but can be anything, $a$ is a constant, and $q(t)$ is simply just a function of one variable: $t$.</p>
+    <p>There are a few methods on solving such a differential equation. Gilbert Strang derived an easy "plug and chug" solution for when the constant $a = 1$:</p>
+    <p style="text-align: center;">$y(t) = \int_{0}^{t} e^{t-s}q(s)ds$&emsp;&emsp; solves &emsp;&emsp;$\frac{dy}{dt} = y + q(t)$</p>
+    <p>To prove this, let's derive our defined $y(t)$ above:</p>
+    <p>$\frac{dy}{dt} = e^t\int_{0}^{t}e^{-s}q(s)ds * e^t(e^{-t}q(t)) \implies \frac{dy}{dt} = y + q(t)$</p>
+    <p>This method is a quick and fast way to solve the a first order differential equation when the constant $a$ is equal to one.</p>
+    <p><b>Taylor Series Practice:</b></p>
+    <p>This is a just a quick taylor series review. Let's let $f(t) = e^{3t}$ and let $a = 0$. Now let's solve for the Taylor series:</p>
+    <p>$$\sum_{n=1}^{4} \frac{f^n(a)}{n!}(t - a)^n$$</p>
+    <p>Plugging in some values, we get:</p>
+    <p>$\frac{f'(0)}{1!}(t - 0)^1 + \frac{f''(0)}{2!}(t - 0)^2 + \frac{f'''(0)}{3!}(t - 0)^3 + \frac{f''''(0)}{4!}(t - 0)^4 \implies$</p>
+    <p>$\frac{3e^{3(0)}}{1}(t)^1 + \frac{9e^{3(0)}}{2}(t)^2 + \frac{27e^{3(0)}}{6}(t)^3 + \frac{81e^{3(0)}}{24}(t)^4 \implies$</p>
+    <p>$3t + \frac{9}{2}t^2 + \frac{27}{6}t^3 + \frac{27}{8}t^4$</p>
+    <p>This our taylor series approximation. Now let's talk a little bit about interest.</p>
+    <p><b>Interest</b></p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Solve the first order, linear differential equation: $\frac{dy}{dt} = 0.05y$ with $y(0) = 100$</p>
+      <p>From earlier calculations, we know how to solve this equation, this time I really want to break down every piece and treat it like a bank account. For this scenario, we can view $y(0) = 100$ as the initial amount of money in the bank. At time $0$, we have \$100 in the bank. Now what is the differential equation telling us? $\frac{dy}{dt} = 0.05y$ is the rate of change of money in our bank account. 0.05 is the interest rate! Now let's solve the differential equation:</p>
+      <p>$\frac{dy}{dt} = 0.05y \implies \frac{1}{y}\frac{dy}{dt} = 0.05 \implies $</p>
+      <p>Integrate both sides: $\int\frac{1}{y}\frac{dy}{dt}dt = \int0.05dt \implies ln|y| = 0.05t + C$</p>
+      <p>Now exponentiate both sides: $e^{ln|y|} = e^{0.05t + C} \implies y = Ae^{0.05t}$</p>
+      <p>Now that we have our solution, let's use the initial condition to solve for $C$:</p>
+      <p>$100 = Ce^{0.005(0)} \implies C = 100$</p>
+      <p>Thus our final solution is: $y(t) = 100e^{0.05t}$. To sum up, if we have a bank with an interest rate of 0.05 and we put in $100 at time $t = 0$, then we can use our solution to find out how much money we would have in say, 5 years:</p>
+      <p>$y(5) = 100e^{0.05(5)} = 100e^{0.25} \approx \$128.40$</p>
+      </div>
+    </div>
+    <p></p>
   </div>
 </body>
 </html>
