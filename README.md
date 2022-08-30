@@ -1,6 +1,6 @@
 # mathsite
 
-This is a Math website that I've created to help myself as well as all others interested in learning math and taking a look at my notes.
+This projcet is a website that I've created to help myself as well as all other students understand college level mathematics. This site contains personal notes taken from my past math classes at Utah State University. Furthermore, I've included other notes (in progress) on biological cell structure and research in hummingbirds and hummingbird activity/behavior.
 
 Author: Kevin Roberts
 Utah State University. Departments of Computer Science, Physics and Applied Mathematics
