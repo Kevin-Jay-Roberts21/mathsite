@@ -71,6 +71,7 @@
     <p><b>Interest</b></p>
     <div style="border: solid 2px; padding: 10px;">
       <p><b>Example:</b> Solve the first order, linear differential equation: $\frac{dy}{dt} = 0.05y$ with $y(0) = 100$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
       <p>From earlier calculations, we know how to solve this equation, this time I really want to break down every piece and treat it like a bank account. For this scenario, we can view $y(0) = 100$ as the initial amount of money in the bank. At time $0$, we have \$100 in the bank. Now what is the differential equation telling us? $\frac{dy}{dt} = 0.05y$ is the rate of change of money in our bank account. 0.05 is the interest rate! Now let's solve the differential equation:</p>
       <p>$\frac{dy}{dt} = 0.05y \implies \frac{1}{y}\frac{dy}{dt} = 0.05 \implies $</p>
       <p>Integrate both sides: $\int\frac{1}{y}\frac{dy}{dt}dt = \int0.05dt \implies ln|y| = 0.05t + C$</p>
@@ -79,6 +80,50 @@
       <p>$100 = Ce^{0.005(0)} \implies C = 100$</p>
       <p>Thus our final solution is: $y(t) = 100e^{0.05t}$. To sum up, if we have a bank with an interest rate of 0.05 and we put in $100 at time $t = 0$, then we can use our solution to find out how much money we would have in say, 5 years:</p>
       <p>$y(5) = 100e^{0.05(5)} = 100e^{0.25} \approx \$128.40$</p>
+      </div>
+    </div>
+    <p>Let's write out the most general form of a first order linear differential equation: $y' = ry + q(t)$. This is a most interesting equation when money is involved. If we go back to our bank account, in this equation, we can denote $r$ as interest, $y'$ as the change in money in our bank account over time, and $q(t)$ as the annual addition of money that we put in our bank account. Before applying this bank account idea, let's first solve this differential equation by using a method called "finding the integrating factor".</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Solve the first order, linear differential equation: $y' = ry + q(t)$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>With an equation of this form, we can find what's called an integrating factor. An integrating factor is the following:</p>
+      <p>Integrating Factor: $ \mu(t) = M(t) = e^{-\int p(t)dt}$</p>
+      <p>Where $p(t) = r$. Typically the integrating factor is denoted my $\mu(t)$ or $M(t)$, but you may use a reasonable variable of your choice as long as it is know that that variable denotes the integrating factor.</p>
+      <p>Now, let's simplify our integrating factor: $\mu(t) = e^{-\int rdt} = e^{-rt + C} = Ae^{-rt}$</p>
+      <p>Once we have our integrating factor, we want to rewrite our initial equation as $y' - ry = q(t)$ and multiply both sides of the equation by our integrating factor:</p>
+      <p>$e^{-rt}(y' - ry) = e^{-rt}q(t)$ (Notice how I didn't include $A$ because they cancel each other out.)</p>
+      <p>Simplying a little more: $y'e^{-rt} - re^{-rt}y = e^{-rt}q(t)$. NOW, this is an important discovery, take a look at the left hand side of the equation. It is equivalent to the derivative of $ye^{-rt}$. This is why using an integrating factor of such a differential equation works out so nicely! Let's rewrite the equation, integrate both sides, and solve for $y$ to get our finaly solution:</p>
+      <p>$\frac{d}{dt}(ye^{-rt}) = e^{-rt}q(t) \rightarrow$ integrate $\rightarrow$</p> 
+      <p>$\int\frac{d}{dt}(ye^{-rt})dt = \int e^{-rt}q(t)dt \implies$</p>
+      <p>$ye^{-rt} = \int e^{-rt}q(t)dt + C \implies$</p>
+      <p>Final solution: $y(t) = Ce^{rt} + e^{rt}\int e^{-rt}q(t)dt$</p>
+      <p>I don't know about you, but I really want to factor that $e^{rt}$ into that integral. You can but you must make a change in variables:</p>
+      <p>$e^{rt}\int e^{-rt}q(t)dt = e^{rt}\int e^{-rs}q(s)ds = \int e^{r(t-s)}q(s)ds$</p>
+      <p>Now our final solution looks like: $y(t) = Ce^{rt} + \int e^{r(t-s)}q(s)ds$</p>
+      <p>And this is the preferred form.</p>
+      </div>
+    </div>
+    <p>Let's try another example where we define $r$ and $q(t)$ in the equation with an initial value:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Solve the first order, linear differential equation: $y' = 0.05y + 12000$ with $y(0) = 3000$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>Firstly, let's look at this problem as if money were related. $r = 0.05$ is the interest rate, $q(t) = 12000$ is the amount of money put into the bank account every year, and $y(0) = 3000$ is the initial amount of money we put into the bank account. Now let's rewrite the equation and find our integrating factor:</p>
+      <p>$y' - 0.05y = 12000$</p>
+      <p>Integrating Factor: $ \mu(t) = e^{-\int p(t)dt} = e^{-\int 0.05dt} = e^{-0.05t}$</p>
+      <p>Now multiply the integrating factor by our differential equation (again, notice how we can ignore the constant from the integration above):</p>
+      <p>$e^{-0.05t}(y' - 0.05y) = e^{-0.05t}12000 \implies$</p>
+      <p>$e^{-0.05t}y' - e^{-0.05t}0.05y = e^{-0.05t}12000 \implies$</p>
+      <p>$\frac{d}{dt}(ye^{-0.05t}) = e^{-0.05t}12000$</p>
+      <p>Now let's integrate both sides of the equation:</p>
+      <p>$\int\frac{d}{dt}(ye^{-0.05t})dt = \int e^{-0.05t}12000dt \implies$</p>
+      <p>$ye^{-0.05t} = \frac{12000}{-0.05}e^{-0.05t} + C \implies$</p>
+      <p>$y = e^{0.05t} * (\frac{12000}{-0.05}e^{-0.05t} + C)$</p>
+      <p>With some simplification, I found the general solution to be: $y = -240,000 + Ce^{0.05t}$</p>
+      <p>Now, if $y(0) = 3000$, then $3000 = -240000 + C \implies C = 243000$. Thus our final solution is:</p>
+      <p>$y(t) = -240000 + 243000e^{0.05t}$</p>
+      <p>For a real world example, if your bank has an annual interest rate of $r = 0.05$, and you put an additional \$12,000 in the bank every year, and start off your bank account with \$3,000, then in 5 years, you will have...</p>
+      <p>$y(5) = -240000 + 243000e^{0.05(5)} \approx \$72018.18$</p>
+      <p>\$72018.18 in your bank account! Cool!</p>
       </div>
     </div>
     <p></p>
