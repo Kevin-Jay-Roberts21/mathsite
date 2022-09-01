@@ -126,7 +126,47 @@
       <p>\$72018.18 in your bank account! Cool!</p>
       </div>
     </div>
-    <p></p>
+    <p>Let's try another example to express how nicely the Integrating Factor method solves nonhomogenous, linear differential equations:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Solve the first order, linear, nonhomogeneous differential equation: $y' = -y + 3 - e^{-2t}$ with $y(0) = 5$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>First, let's rewrite the equation in a nicer form: $y' + y = 3 - e^{-2t}$</p>
+      <p>Now, let's find our integrating factor:</p>
+      <p>$\mu(t) = e^{\int p(t)dt} = e^{\int 1dt} = e^t$</p>
+      <p>Now that we have our integrating factor, let's multiply it to both sides of the differential equation:</p>
+      <p>$e^t(y' + y) = e^t(3 - e^{-2t}) \implies \frac{d}{dx}(ye^t) = 3e^t - e^{-t}$</p>
+      <p>Now let's integrate both sides of the equation and solve for $y$:</p>
+      <p>$\int\frac{d}{dx}(ye^t)dt = \int 3e^t - e^{-t}dt \implies$</p>
+      <p>$ye^t = 3e^t + e^{-t} + C \implies y(t) = 3 + e^{-2t} + Ce^{-t}$</p>
+      <p>If $y(0) = 5$, then $5 = 3 + e^{-2(0)} + Ce^{-(0)} \implies$</p>
+      <p>$5 = 3 + 1 + C \implies C = 1$ Thus, our final solution is:</p>
+      <p>$y(t) = 3 + e^{-2t} + e^{-t}$</p>
+      </div>
+    </div>
+    <p>Another differential equation that we need to take into consideration is one that contains a Heaviside function or also known as a Step function. The proper notation for a function is: $H(t - a)$, where $t$ is time and $a$ is some constant. The important thing to remember about the heasivide function is that it's a step function:</p> 
+    <p style="text-align: center;">$H(t) = 0$ if $t < 0$ and $H(t) = 1$ if $t \ge 0$</p>
+    <p>Another useful definiton of the Heaviside function is the following:</p>
+    <p style="text-align: center;">$\int f(t)H(t)dt = \int^{\infty}_{0}f(t)dt$</p>
+    <p>Let's try an example with the Heaviside function in the differential equation and let's use the above definitions:</p>
+    <div style="border: solid 2px; padding: 10px;">
+      <p><b>Example:</b> Solve the first order, linear, nonhomogeneous differential equation: $y' = -y + H(t - 3)$ with $y(0) = 1$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+      <p>By now, we are comfortable with finding an integrating factor. After doing so, I get:</p>
+      <p>$\frac{d}{dx}(ye^t) = e^tH(t - 3)$</p>
+      <p>After integrating I get:</p>
+      <p>$ye^t = \int e^tH(t - 3)dt \implies$</p>
+      <p>$ye^t = \int^{3}_{0}e^tH(t - 3)dt + \int^{t}_{3} e^sH(t - 3)ds + C$</p>
+      <p>The very reason I split up the integral is because of the Heaviside function. Take a look at the first integral. Notice how we are integrating from 0 to 3. By definition of the heaviside function, we know that, inside that integral, $H(t - 3)$ is equal to 0. Thus, that entire integral goes to 0. So, now we have the following:</p>
+      <p>$ye^t = 0 + \int^{t}_{3} e^sH(t - 3)ds + C$</p>
+      <p>Now let's look at the next integral. Since, $H(t - 3)$ will always be positive (look at the bounds of the integral), we know that $H(t - 3) = 1$, thus, our equation turns into:</p>
+      <p>$ye^t = \int^{t}_{3} e^sds + C \implies $</p>
+      <p>$ye^t = e^t - e^3 + C \implies y(t) = 1 - e^{-3t} + Ce^{-t}$</p>
+      <p>Now that we have our general solution, let's use the initial condition to solve for the exact solution:</p>
+      <p>If $y(0) = 1$, then $1 = Ce^{-0} + (1 - e^{-3(0)})(0) \implies C = 1$</p>
+      <p>Thus, our final solution is:</p>
+      <p>$y(t) = 1 - e^{-3t} + e^{-t}$</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
