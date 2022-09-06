@@ -158,15 +158,18 @@
       <p>$ye^t = \int^{3}_{0}e^tH(t - 3)dt + \int^{t}_{3} e^sH(t - 3)ds + C$</p>
       <p>The very reason I split up the integral is because of the Heaviside function. Take a look at the first integral. Notice how we are integrating from 0 to 3. By definition of the heaviside function, we know that, inside that integral, $H(t - 3)$ is equal to 0. Thus, that entire integral goes to 0. So, now we have the following:</p>
       <p>$ye^t = 0 + \int^{t}_{3} e^sH(t - 3)ds + C$</p>
-      <p>Now let's look at the next integral. Since, $H(t - 3)$ will always be positive (look at the bounds of the integral), we know that $H(t - 3) = 1$, thus, our equation turns into:</p>
-      <p>$ye^t = \int^{t}_{3} e^sds + C \implies $</p>
-      <p>$ye^t = e^t - e^3 + C \implies y(t) = 1 - e^{-3t} + Ce^{-t}$</p>
+      <p>Now let's look at the next integral. Since, $H(t - 3)$ will always be positive (look at the bounds of the integral), we can treat $H(t - 3)$ as a constant, thus, our equation turns into:</p>
+      <p>$ye^t = H(t - 3)\int^{t}_{3} e^sds \implies $</p>
+      <p>$ye^t = H(t - 3)(e^t - e^3) \implies y(t) = H(t - 3)(1 - e^{-3t})$</p>
+      <p>Note that this is our particular solution! Why? Because when we integrated, we only integrated from $\int^{t}_{0}$ and not $\int^{\infty}_{0}$. So we must include the homogeneous solution, which is the solution to the differential equation: $y' + y = 0$. Using an integrating factor, we know that the solution to this differential equation is: $y(t) = Ce^{-t}$. Now that we have our particular solution and our exact solution, we add them together and our complete solution is:</p>
+      <p>$y(t) = H(t - 3)(1 - e^{-3t}) + Ce^{-t}$</p>
       <p>Now that we have our general solution, let's use the initial condition to solve for the exact solution:</p>
       <p>If $y(0) = 1$, then $1 = Ce^{-0} + (1 - e^{-3(0)})(0) \implies C = 1$</p>
       <p>Thus, our final solution is:</p>
-      <p>$y(t) = 1 - e^{-3t} + e^{-t}$</p>
+      <p>$y(t) = H(t - 3)(1 - e^{-3t}) + e^{-t}$</p>
       </div>
     </div>
+    <p></p>
   </div>
 </body>
 </html>
