@@ -90,6 +90,26 @@ def calculus1Class(response):
 	else:
 		return render(response, template_name, {action:action})
 	return render(response, template_name, {})
+def calculus2Class(response):
+	template_name = "myClasses/calculus2Class.html"
+	action = "/calculus2Class/"
+	if response.method == "POST":
+		searchPages = response.POST["searchPages"]
+		templates = runSearch(searchPages)
+		return render(response, "main/searchHome.html", {action:action, "templates":templates})
+	else:
+		return render(response, template_name, {action:action})
+	return render(response, template_name, {})
+def calculus3Class(response):
+	template_name = "myClasses/calculus3Class.html"
+	action = "/calculus3Class/"
+	if response.method == "POST":
+		searchPages = response.POST["searchPages"]
+		templates = runSearch(searchPages)
+		return render(response, "main/searchHome.html", {action:action, "templates":templates})
+	else:
+		return render(response, template_name, {action:action})
+	return render(response, template_name, {})
 def linearAlgebraAndDifferentialEquationsClass(response):
 	template_name = "myClasses/linearAlgebraAndDifferentialEquationsClass.html"
 	action = "/linearAlgebraAndDifferentialEquationsClass/"
@@ -136,7 +156,7 @@ def runSearch(word):
 	# open all templates and search for the word
 	BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	# Define the filename and the full file path
-	allTemplates = ['algebra/algebraHome', 'calculus/calculusHome', 'examples/examplesHome', 'linearAlgebra/linearAlgebraHome', 'main/home', 'myClasses/myClassesHome', 'myClasses/ordinaryDifferentialEquationsClass', 'myClasses/calculus1Class', 'myClasses/linearAlgebraClass', 'myClasses/linearAlgebraAndDifferentialEquationsClass', 'research/researchHome']
+	allTemplates = ['algebra/algebraHome', 'calculus/calculusHome', 'examples/examplesHome', 'linearAlgebra/linearAlgebraHome', 'main/home', 'myClasses/myClassesHome', 'myClasses/ordinaryDifferentialEquationsClass', 'myClasses/calculus1Class', 'myClasses/calculus2Class', 'myClasses/calculus3Class', 'myClasses/linearAlgebraClass', 'myClasses/linearAlgebraAndDifferentialEquationsClass', 'research/researchHome']
 
 	templatesContainingWord = []
 	for i in range(len(allTemplates)):
