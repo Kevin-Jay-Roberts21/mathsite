@@ -4,9 +4,9 @@ from . import views
 urlpatterns = [
 	path("", views.home, name="home"),
 	path("home/", views.home, name="home"),
-	path("algebraHome/", views.algebra, name="algebra"),
-	path("calculusHome/", views.calculus, name="calculus"),
-	path("linearAlgebraHome/", views.linearAlgebra, name="linearAlgebra"),
+	path("theGreatBooks/", views.theGreatBooks, name="theGreatBooks"),
+	path("theGreatConversation/", views.theGreatConversation, name="theGreatConversation"),
+	path("theIliadOfHomer/", views.theIliadOfHomer, name="theIliadOfHomer"),
 	path("myClassesHome/", views.myClasses, name="myClasses"),
 	path("linearAlgebraAndDifferentialEquationsClass/", views.linearAlgebraAndDifferentialEquationsClass, name="linearAlgebraAndDifferentialEquationsClass"),
 	path("linearAlgebraClass/", views.linearAlgebraClass, name="linearAlgebraClass"),

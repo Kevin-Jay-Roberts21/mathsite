@@ -15,9 +15,29 @@ def home(response):
 		return render(response, template_name, {action:action})
 	return render(response, template_name, {})
 
-def algebra(response):
-	template_name = "algebra/algebraHome.html"
-	action = "/algebraHome/"
+def theGreatBooks(response):
+	template_name = "theGreatBooks/theGreatBooks.html"
+	action = "/theGreatBooks/"
+	if response.method == "POST":
+		searchPages = response.POST["searchPages"]
+		templates = runSearch(searchPages)
+		return render(response, "main/searchHome.html", {action:action, "templates":templates})
+	else:
+		return render(response, template_name, {action:action})
+	return render(response, template_name, {})
+def theGreatConversation(response):
+	template_name = "theGreatBooks/theGreatConversation.html"
+	action = "/theGreatConversation/"
+	if response.method == "POST":
+		searchPages = response.POST["searchPages"]
+		templates = runSearch(searchPages)
+		return render(response, "main/searchHome.html", {action:action, "templates":templates})
+	else:
+		return render(response, template_name, {action:action})
+	return render(response, template_name, {})
+def theIliadOfHomer(response):
+	template_name = "theGreatBooks/theIliadOfHomer.html"
+	action = "/theIliadOfHomer/"
 	if response.method == "POST":
 		searchPages = response.POST["searchPages"]
 		templates = runSearch(searchPages)
@@ -26,27 +46,6 @@ def algebra(response):
 		return render(response, template_name, {action:action})
 	return render(response, template_name, {})
 
-def calculus(response):
-	template_name = "calculus/calculusHome.html"
-	action = "/calculusHome/"
-	if response.method == "POST":
-		searchPages = response.POST["searchPages"]
-		templates = runSearch(searchPages)
-		return render(response, "main/searchHome.html", {action:action, "templates":templates})
-	else:
-		return render(response, template_name, {action:action})
-	return render(response, template_name, {})
-
-def linearAlgebra(response):
-	template_name = "linearAlgebra/linearAlgebraHome.html"
-	action = "/linearAlgebraHome/"
-	if response.method == "POST":
-		searchPages = response.POST["searchPages"]
-		templates = runSearch(searchPages)
-		return render(response, "main/searchHome.html", {action:action, "templates":templates})
-	else:
-		return render(response, template_name, {action:action})
-	return render(response, template_name, {})
 
 def research(response):
 	template_name = "research/researchHome.html"
@@ -156,7 +155,7 @@ def runSearch(word):
 	# open all templates and search for the word
 	BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	# Define the filename and the full file path
-	allTemplates = ['algebra/algebraHome', 'calculus/calculusHome', 'examples/examplesHome', 'linearAlgebra/linearAlgebraHome', 'main/home', 'myClasses/myClassesHome', 'myClasses/ordinaryDifferentialEquationsClass', 'myClasses/calculus1Class', 'myClasses/calculus2Class', 'myClasses/calculus3Class', 'myClasses/linearAlgebraClass', 'myClasses/linearAlgebraAndDifferentialEquationsClass', 'research/researchHome']
+	allTemplates = ['examples/examplesHome', 'theGreatBooks/theGreatBooks', 'theGreatBooks/theGreatConversation', 'theGreatBooks/theIliadOfHomer', 'main/home', 'myClasses/myClassesHome', 'myClasses/ordinaryDifferentialEquationsClass', 'myClasses/calculus1Class', 'myClasses/calculus2Class', 'myClasses/calculus3Class', 'myClasses/linearAlgebraClass', 'myClasses/linearAlgebraAndDifferentialEquationsClass', 'research/researchHome']
 
 	templatesContainingWord = []
 	for i in range(len(allTemplates)):
