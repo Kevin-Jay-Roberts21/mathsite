@@ -170,7 +170,20 @@
       </div>
     </div>
     <p>Now that we've gone over a few differential equations and methods to solve them, let's used some real world example problems. Let's discuss Newton's Law of Cooling in a differential equation:</p>
-    
+    <p><b>Cup of Coffee Example:</b></p>
+
+    <p>Suppose that a function $u(t)$ is a temperature function with a given time variable $t$. Newton's Law of Cooling is basically this: Say we have a cup of hot coffee and place it into a fridge. Eventually, the temperature of our cup of coffee will change from being really hot, to the temperature inside the fridge. Such a differential equation will look like the following:</p>
+    <p style="text-align: center;">$\frac{du}{dt} = rA - ru$</p>
+    <p>Where $\frac{du}{dt}$ is the rate of temperature change with respect to time, $r$ is the rate of temperature change, $A$ is the temperature of our cups surroundings, and $u$ is a temperature variable. Let's proceed to solve this differential equation:</p>
+    <p>$u' = rA - ru \implies u' + ru = rA$. Looks like we need to solve this differential equation by finding an integrating factor. Let $\mu = e^{\int p(t)dt} = e^{\int rdt} = e^{rt}$.</p>
+    <p>Now we multiply it to our differential equation:</p>
+    <p>$e^{rt}(u' - ru) = e^{rt}(rA) \implies ue^{rt} = rA*e^{rt}$. Now intergrate both sides and solve for $u$:</p>
+    <p>$\int (ue^{rt})' = \int e^{rt}rAdt \implies u = e^{-rt}\int e^{rt}rA dt + Ce^{-rt} \implies u = A + Ce^{-rt}.$</p>
+    <p>Now let's say that the temperature of our cup of coffee is initially 185 degrees, thus, $u(0) = 185$. Further, let's say that our fridge has a temperature of 45 degrees. Thus, $A = 45$. Finally, let's say our rate of change in temperature is 0.024, thus, $r = 0.024$. Now we can solve for our $C$:</p>
+    <p>$185 = 45 + C \implies C = 140$</p>
+    <p>Finally, our differential equation is: $u(t) = 45 + 140e^{-0.24t}$.</p>
+    <p>Conclusion: We were given a differential equation that tells us the rate of change of temperature for our cup of coffee if it's initial temperature was 185 degrees and its surrounding temperature (the fridge) is at 45 degrees. From our differential equation, we can plug in a certain time $t$ and find out what the temperature of our cup of coffee is at that time. Notice how if we leave our cup of coffee in the fridge for a very very long time, say a week, then the temperature of the cup will eventually go to 45 degrees! Specifically because the term $140e^{-0.024t}$ will be approximately 0 when our time $t$ is very large.</p>
+
   </div>
 </body>
 </html>
