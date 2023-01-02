@@ -7,6 +7,7 @@ urlpatterns = [
 	path("theGreatBooks/", views.theGreatBooks, name="theGreatBooks"),
 	path("theGreatConversation/", views.theGreatConversation, name="theGreatConversation"),
 	path("theIliadOfHomer/", views.theIliadOfHomer, name="theIliadOfHomer"),
+	path("theOdyssey/", views.theOdyssey, name="theOdyssey"),
 	path("myClassesHome/", views.myClasses, name="myClasses"),
 	path("linearAlgebraAndDifferentialEquationsClass/", views.linearAlgebraAndDifferentialEquationsClass, name="linearAlgebraAndDifferentialEquationsClass"),
 	path("linearAlgebraClass/", views.linearAlgebraClass, name="linearAlgebraClass"),

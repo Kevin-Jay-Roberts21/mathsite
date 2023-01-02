@@ -45,6 +45,16 @@ def theIliadOfHomer(response):
 	else:
 		return render(response, template_name, {action:action})
 	return render(response, template_name, {})
+def theOdyssey(response):
+	template_name = "theGreatBooks/theOdyssey.html"
+	action = "/theOdyssey/"
+	if response.method == "POST":
+		searchPages = response.POST["searchPages"]
+		templates = runSearch(searchPages)
+		return render(response, "main/searchHome.html", {action:action, "templates":templates})
+	else:
+		return render(response, template_name, {action:action})
+	return render(response, template_name, {})
 
 
 def research(response):
@@ -155,7 +165,7 @@ def runSearch(word):
 	# open all templates and search for the word
 	BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	# Define the filename and the full file path
-	allTemplates = ['examples/examplesHome', 'theGreatBooks/theGreatBooks', 'theGreatBooks/theGreatConversation', 'theGreatBooks/theIliadOfHomer', 'main/home', 'myClasses/myClassesHome', 'myClasses/ordinaryDifferentialEquationsClass', 'myClasses/calculus1Class', 'myClasses/calculus2Class', 'myClasses/calculus3Class', 'myClasses/linearAlgebraClass', 'myClasses/linearAlgebraAndDifferentialEquationsClass', 'research/researchHome']
+	allTemplates = ['examples/examplesHome', 'theGreatBooks/theGreatBooks', 'theGreatBooks/theGreatConversation', 'theGreatBooks/theIliadOfHomer', 'theGreatBooks/theOdyssey', 'main/home', 'myClasses/myClassesHome', 'myClasses/ordinaryDifferentialEquationsClass', 'myClasses/calculus1Class', 'myClasses/calculus2Class', 'myClasses/calculus3Class', 'myClasses/linearAlgebraClass', 'myClasses/linearAlgebraAndDifferentialEquationsClass', 'research/researchHome']
 
 	templatesContainingWord = []
 	for i in range(len(allTemplates)):
