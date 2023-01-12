@@ -192,14 +192,16 @@
     <p>To find the particular solution, we have to consider what is in the right hand side of the given differential equation, for our case, it's $\cos(2t)$. The $\cos(2t)$ indicates that the particular solution will be of the form $A\cos(2t) + B\sin(2t)$. There are other types of solutions that the particular solution may have that depend on the right hand side of the equation, for our case, since the right hand side contains a $\sin()$ or a $\cos()$ then the solution will look like $A\cos(2t) + B\sin(2t)$. So all there's left to do now if solve for $A$ and $B$. To do this, we'll plug in $y_p = A\cos(2t) + B\sin(2t)$ and $y_p' = -2A\sin(2t) + 2B\cos(2t)$ into the differential equation. So we have:</p>
     <p>$y_p' - 2y_p = \cos(2t) \implies \big(-2A\sin(2t) + 2B\cos(2t)\big) - 2\big(A\cos(2t) + B\sin(2t)\big) = \cos(2t) \implies$</p>
     <p>$-2A\sin(2t) + 2B\cos(2t) - 2A\cos(2t) - 2B\sin(2t) = \cos(2t) \implies$</p>
+    <p>Now we can convert the above equation into two seperable equations. This method is similar to what is done in partial fraction decomposition</p>
     <p>$\begin{equation}
-          f(x) = \left\{
+          \left\{
                   \begin{array}{ll}
                       -2A\sin(2t) - 2B\sin(2t) = 0\\
                       2B\cos(2t) - 2A\cos(2t) = \cos(2t)
                   \end{array}
               \right.
           \end{equation} \implies $</p>
+    <p>Now divide the top equation by $\sin(2t)$ and the bottom equation by $\cos(2t)$:</p>
     <p>$\begin{equation}
            \left\{
                 \begin{array}{ll}
@@ -208,6 +210,17 @@
                 \end{array}
             \right.
         \end{equation}$</p>
+    <p>In the first equation, let's solve for $B$:</p>
+    <p>$-2A - 2B = 0 \implies -2B = 2A \implies B = -\frac{2A}{2} \implies B = -A$</p>
+    <p>Now, let's plug $B = -A$ into the seon equation:</p>
+    <p>$2(-A) - 2A = 1 \implies -2A - 2A = 1 \implies -4A = 1 \implies A = -\frac{1}{4}$</p>
+    <p>Since $A = -\frac{1}{4}$, then we know that $B = \frac{1}{4}$. Finally, we can now write our particular solution to be: $y_p = -\frac{1}{4}\cos(2t) + \frac{1}{4}\sin(2t)$</p>
+    <p>Combining our particular solution and null solution, we have found our general solution to be:</p>
+    <p>$y(t) = y_n + y_p \implies y(t) = Ce^{2t} - \frac{1}{4}\cos(2t) + \frac{1}{4}\sin(2t)$</p>
+    <p>Now, we can use the initial condition $y(0) = 0$, to solve for $C$:</p>
+    <p>If $y(0) = 0$, then $0 = Ce^{2(0)} - \frac{1}{4}\cos(2(0)) + \frac{1}{4}\sin(2(0)) \implies$</p>
+    <p>$0 = C - \frac{1}{4} \implies C = \frac{1}{4}$</p>
+    <p>Thus, the final, exact solution for $y(0) = 0$ is: $y(t) = \frac{1}{4}e^{2t} - \frac{1}{4}\cos(2t) + \frac{1}{4}\sin(2t)$</p>
     <p></p>
   </div>
 </body>
