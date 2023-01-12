@@ -186,9 +186,29 @@
     <p><b>Variation of Parameters</b></p>
     <p>There are some cases where we have a differential equation that is not homogeneous and has a function of $t$ on the right side of the equation. Such equations look like the following:</p>
     <p style="text-align: center;">$y' + ry = q(t)$</p>
-    <p>Let's consider such an equation where $q(t) = cos(2t)$</p>
-    
-
+    <p>Let's consider such an equation where $q(t) = \cos(2t)$ and $r = -2$, then the equation we wish to solve is the following:</p>
+    <p style="text-align: center;">$y' - 2y = \cos(2t)$</p>
+    <p>For this nonhomogeneous differential equation, we are going to want to solve this by combining what's called a null solution and a particular solution. The null solution is one where the right hand side of the equation is $0$. For our problem, the null solution will be the solution to the equation: $y' - 2y = 0$. This can be solved using either separation of variables or using and integrating factor. We've learned how to solve such an equation above, so without the work shown here, the null solution to the differential equation is $Ce^{2t}$, and it's denoted as $y_n = Ce^{2t}$. Now we need to solve for the particular solution.</p>
+    <p>To find the particular solution, we have to consider what is in the right hand side of the given differential equation, for our case, it's $\cos(2t)$. The $\cos(2t)$ indicates that the particular solution will be of the form $A\cos(2t) + B\sin(2t)$. There are other types of solutions that the particular solution may have that depend on the right hand side of the equation, for our case, since the right hand side contains a $\sin()$ or a $\cos()$ then the solution will look like $A\cos(2t) + B\sin(2t)$. So all there's left to do now if solve for $A$ and $B$. To do this, we'll plug in $y_p = A\cos(2t) + B\sin(2t)$ and $y_p' = -2A\sin(2t) + 2B\cos(2t)$ into the differential equation. So we have:</p>
+    <p>$y_p' - 2y_p = \cos(2t) \implies \big(-2A\sin(2t) + 2B\cos(2t)\big) - 2\big(A\cos(2t) + B\sin(2t)\big) = \cos(2t) \implies$</p>
+    <p>$-2A\sin(2t) + 2B\cos(2t) - 2A\cos(2t) - 2B\sin(2t) = \cos(2t) \implies$</p>
+    <p>$\begin{equation}
+          f(x) = \left\{
+                  \begin{array}{ll}
+                      -2A\sin(2t) - 2B\sin(2t) = 0\\
+                      2B\cos(2t) - 2A\cos(2t) = \cos(2t)
+                  \end{array}
+              \right.
+          \end{equation} \implies $</p>
+    <p>$\begin{equation}
+           \left\{
+                \begin{array}{ll}
+                    -2A - 2B = 0\\
+                    2B - 2A = 1
+                \end{array}
+            \right.
+        \end{equation}$</p>
+    <p></p>
   </div>
 </body>
 </html>
