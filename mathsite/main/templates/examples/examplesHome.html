@@ -19,9 +19,37 @@
       <p>Our first task is to simplify and factor the denominator as much as possible before we split anything up. It is important also not to factor if it results in complex numbers. For example, we don't want to reduce $x^2 + 4$, because then we end up getting $(x + 2i)(x - 2i)$, which are complex numbers. For our example, when we split it up, we don't need to worry about complex numbers. In choosing how to split up the fraction, we split up every element in parenthesis, but also if we are given an element with an exponent, say $x^3$, then we must split the fraction up including $x$, $x^2$, and $x^3$. For now, I'll go through our simple example, then I'll go over more complicated examples.</p>
       <p>For $\frac{1}{x(x + 1)}$, we want to split it up into two fractions:</p>
       <p>$$\frac{A}{x} + \frac{B}{x + 1}$$</p>
-      <p></p>
+      <p>Now the goal is to figure out what $A$ and $B$ are. To do this let's first mulitply $A$ by $x + 1$ and $B$ by $x$. This will give us the following equations:</p>
+      <p style="text-align: center;">$A(x + 1)$ and $Bx$</p>
+      <p>Now with these equations, we want to combine every $x$ term and every non $x$ term. If we had other equations involving $x^2$ or $x^3$ then we want to separate those as well. After seprarting, we have the following:</p>
+      <p>$$\begin{equation}
+           \left\{
+                \begin{array}{ll}
+                    A + B \ \ (x \ terms)\\
+                    A \ \ (non \ x \ terms)
+                \end{array}
+            \right.
+        \end{equation}$$</p>
+      <p>Now here is the tricky part. Take a look at the numerator of the original equation, which is $1$. We want to set this value equal to the equation above that only has numbers involved. Additionally, we want to set the equation that has $x$'s involved equal to $0$ because there are no $x$ terms in the numerator of the original equation. Say the numerator was $3 + 2x$, then we would set $A + B$ equal to $2$ and we would set $A$ equal to 3. For our case, our numerator is just $1$, so we have the following:</p>
+      <p>$$\begin{equation}
+           \left\{
+                \begin{array}{ll}
+                    A + B = 0\\
+                    A = 1
+                \end{array}
+            \right.
+        \end{equation}$$</p>
+      <p>Now we have two equations and two unkowns. Clearly, $A = 1$. If $A = 1$, then $(1) + B = 0 \implies B = -1$. Finally, since we have found that $A = 1$ and $B = -1$, we can plug these values into the split up fraction above:</p>
+      <p>$$\frac{(1)}{x} + \frac{(-1)}{x + 1}$$</p>
+      <p>Thus, we can conclude that...</p>
+      <p>$$\frac{1}{x(x + 1)} = \frac{1}{x} + \frac{-1}{x + 1}$$</p>
+      <p>Now, with a little less in-depth description, I'll go through splitting up the following fractions using partial fraction decomposition: $\frac{x^2 - 1}{x^2(x + 2)}$, $\frac{x^2}{x(x - 1)^2}$, and $\frac{x + 5}{x^3}$</p>
+      <p><b>Example 1:</b> Use partial fraction decomposition to split up $\frac{x^2 - 1}{x^2(x + 2)}$</p>
+      <p><b>Example 2:</b> Use partial fraction decomposition to split up $\frac{x^2}{x(x - 1)^2}$</p>
+      <p><b>Example 3:</b> Use partial fraction decomposition to split up $\frac{x + 5}{x^3}$</p>
     </div>
     <p></p>
+    
 
   </div>
   
