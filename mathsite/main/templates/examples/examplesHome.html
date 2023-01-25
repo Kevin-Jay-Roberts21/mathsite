@@ -45,6 +45,30 @@
       <p>$$\frac{1}{x(x + 1)} = \frac{1}{x} + \frac{-1}{x + 1}$$</p>
       <p>Now, with a little less in-depth description, I'll go through splitting up the following fractions using partial fraction decomposition: $\frac{x^2 - 1}{x^2(x + 2)}$, $\frac{x^2}{x(x - 1)^2}$, and $\frac{x + 5}{x^3}$</p>
       <p><b>Example 1:</b> Use partial fraction decomposition to split up $\frac{x^2 - 1}{x^2(x + 2)}$</p>
+      <div style="padding-left: 50px; padding-right: 50px;">
+        <p>Let $\frac{x^2 - 1}{x^2(x + 2)} = \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x + 2}$</p>
+        <p>Now multiply $A$ by $x(x + 2)$, $B$ by $(x + 2)$, and $C$ by $x^2$ and set it equal to the numerator of the original problem:</p>
+        <p>$Ax(x + 2) + B(x + 2) + Cx^2 = x^2 - 1 \implies$</p>
+        <p>$Ax^2 + 2Ax + Bx + 2B + Cx^2 = x^2 - 1$</p>
+        <p>Now collect all of the $x^2$, $x$, and constant terms (when I say constant terms I mean numbers without a variable next to them) and set them equal to the corresponding terms $x^2$, $x$ and constant terms in the numerator of the original problem:</p>
+        <p>$$\begin{equation}
+           \left\{
+                \begin{array}{ll}
+                    A + C = 1\\
+                    2A + B = 0\\
+                    2B = -1
+                \end{array}
+            \right.
+        \end{equation}$$</p>
+        <p>Now solve for $A$, $B$, and $C$:</p>
+        <p>$2B = -1 \implies B = -\frac{1}{2}$</p>
+        <p>$2A + B = 0 \implies 2A + (-\frac{1}{2}) = 0 \implies 2A = \frac{1}{2} \implies A = \frac{1}{4}$</p>
+        <p>$A + C = 1 \implies (\frac{1}{4}) + C = 1 \implies C = \frac{3}{4}$</p>
+        <p>Thus, plugging in $A$, $B$, and $C$, we get:</p>
+        <p>$\frac{x^2 - 1}{x^2(x + 2)} = \frac{(\frac{1}{4})}{x} + \frac{(-\frac{1}{2})}{x^2} + \frac{(\frac{3}{4})}{x + 2} = \frac{1}{4x} - \frac{1}{2x^2} + \frac{3}{4(x + 2)}$</p>
+      </div>
+
+      
       <p><b>Example 2:</b> Use partial fraction decomposition to split up $\frac{x^2}{x(x - 1)^2}$</p>
       <p><b>Example 3:</b> Use partial fraction decomposition to split up $\frac{x + 5}{x^3}$</p>
     </div>
